@@ -108,4 +108,146 @@ if(isset($_POST["select"]))
     $output .= '</table></div>';
     echo $output;
 }
+// delete
+if(isset($_POST["del"]))
+{
+ $output = '';
+ $query = "SELECT * FROM medicines WHERE id = '".$_POST["del"]."'";
+ $result = mysqli_query($con, $query);
+ $output .= '  
+      <div class="table-responsive">  
+           <table class="table table-bordered">';
+    while($row = mysqli_fetch_array($result))
+    {
+     $output .= '
+     <tr>  
+            <p style="text-align:center;"><b>Are You Sure ?!</b></p>
+            <input type="hidden" name="id" id="id" value="'.$row['id'].'"/> 
+        </tr>
+     ';
+    }
+    $output .= '</table></div>';
+    echo $output;
+}
+// update deleted medicine
+if(isset($_POST["updatedel"]))
+{
+ $output = '';
+ $query = "SELECT * FROM medicines WHERE id = '".$_POST["updatedel"]."'";
+ $result = mysqli_query($con, $query);
+ $output .= '  
+      <div class="table-responsive">  
+           <table class="table table-bordered">';
+    while($row = mysqli_fetch_array($result))
+    {
+     $output .= '
+     <tr>  
+     <input type="hidden" name="id" id="id" value="'.$row['id'].'"/> 
+     <label for="recipient-name" class="col-form-label">Type:</label>
+     <select class="form-select" aria-label="Default select example" name="type" id="type"   required>
+         <option selected style="display: none;" value="'.$row['is_deleted'].'">'.$row['is_deleted'].'</option>
+         <option value="Available">Available</option>
+         <option value="Not Available">Not Available</option>
+     </select>
+        </tr>
+     ';
+    }
+    $output .= '</table></div>';
+    echo $output;
+}
+//update  team
+if(isset($_POST["updateteam"]))
+{
+ $output = '';
+
+ $query = "SELECT * FROM team WHERE id = '".$_POST["updateteam"]."'";
+ $result = mysqli_query($con, $query);
+ $output .= '  
+      <div class="table-responsive">  
+           <table class="table table-bordered">';
+           $ciphering = "AES-128-CTR";
+           $options   = 0;
+           $decryption_iv = '1234567891011121';
+           $decryption_key = "W3docs";
+           while ($row = $result->fetch_assoc()) {
+
+               $decryption = openssl_decrypt($row['password'], $ciphering, $decryption_key, $options, $decryption_iv);
+    
+     $output .= '
+ 
+     <input type="hidden" class="form-control" id="id" name="id" value="'.$row['id'].'" required>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" value="'.$row['name'].'" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Email</label>
+                            <input type="text" class="form-control" id="email" name="email" value="'.$row['email'].'" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Password</label>
+                            <input type="text" class="form-control" id="password" name="password" value="'.$decryption.'" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Type:</label>
+                            <select class="form-select" aria-label="Default select example" name="type" id="type"   required>
+                                <option selected style="display: none;" value="'.$row['type'].'">'.$row['type'].'</option>
+                                <option value="Admin">Admin</option>
+                                <option value="Staff">Staff</option>
+                            </select>
+                        </div>
+                       
+                  
+     ';
+    }
+    $output .= '</table></div>';
+    echo $output;
+}
+// delete team
+if(isset($_POST["deluser"]))
+{
+ $output = '';
+ $query = "SELECT * FROM team WHERE id = '".$_POST["deluser"]."'";
+ $result = mysqli_query($con, $query);
+ $output .= '  
+      <div class="table-responsive">  
+           <table class="table table-bordered">';
+    while($row = mysqli_fetch_array($result))
+    {
+     $output .= '
+     <tr>  
+            <p style="text-align:center;"><b>Are You Sure ?!</b></p>
+            <input type="hidden" name="id" id="id" value="'.$row['id'].'"/> 
+        </tr>
+     ';
+    }
+    $output .= '</table></div>';
+    echo $output;
+}
+// update deleted user
+if(isset($_POST["updatedeluser"]))
+{
+ $output = '';
+ $query = "SELECT * FROM team WHERE id = '".$_POST["updatedeluser"]."'";
+ $result = mysqli_query($con, $query);
+ $output .= '  
+      <div class="table-responsive">  
+           <table class="table table-bordered">';
+    while($row = mysqli_fetch_array($result))
+    {
+     $output .= '
+     <tr>  
+     <input type="hidden" name="id" id="id" value="'.$row['id'].'"/> 
+     <label for="recipient-name" class="col-form-label">Type:</label>
+     <select class="form-select" aria-label="Default select example" name="type" id="type"   required>
+         <option selected style="display: none;" value="'.$row['is_deleted'].'">'.$row['is_deleted'].'</option>
+         <option value="Available">Available</option>
+         <option value="Not Available">Not Available</option>
+     </select>
+        </tr>
+     ';
+    }
+    $output .= '</table></div>';
+    echo $output;
+}
 ?>

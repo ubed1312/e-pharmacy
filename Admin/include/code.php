@@ -211,3 +211,382 @@ $result2 =$con->query($sql2);
         echo "<meta http-equiv=\"refresh\" content=\"1;URL=../medicine-list.php \">";
 
 }
+// delete medicine
+
+if(isset($_POST['deletemedicine']))  
+{
+$id = $_POST['id'];
+
+$sql3 = "UPDATE medicines set is_deleted='Not Available' where id=$id ";
+$result3 =$con->query($sql3);
+
+    echo  '
+
+
+<script src="../assets/libs/jquery/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+       <script type="text/javascript">   
+
+                $(document).ready(function(){
+
+                 
+                  
+                  swal({
+                    icon: "success",
+                    title: "Good .",
+                    text: "Medicine deleted",
+                  })
+                });
+              </script>
+';
+
+    echo "<meta http-equiv=\"refresh\" content=\"1;URL=../medicine-list.php \">";
+
+
+
+
+
+
+} else {
+    echo  '
+
+
+    <script src="../assets/libs/jquery/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+           <script type="text/javascript">   
+    
+                    $(document).ready(function(){
+    
+                     
+                      
+                      swal({
+                        icon: "error",
+                        title: "Error .",
+                        text: "Error",
+                      })
+                    });
+                  </script>
+    ';
+    
+        echo "<meta http-equiv=\"refresh\" content=\"1;URL=../medicine-list.php \">";
+
+}
+// update deleted medicine
+if(isset($_POST['updatedel']))  
+{
+$id = $_POST['id'];
+
+$sql3 = "UPDATE medicines set is_deleted='Available' where id=$id ";
+$result3 =$con->query($sql3);
+
+    echo  '
+
+
+<script src="../assets/libs/jquery/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+       <script type="text/javascript">   
+
+                $(document).ready(function(){
+
+                 
+                  
+                  swal({
+                    icon: "success",
+                    title: "Good .",
+                    text: "Medicine Updated",
+                  })
+                });
+              </script>
+';
+
+    echo "<meta http-equiv=\"refresh\" content=\"1;URL=../medicine-deleted.php \">";
+
+
+
+
+
+
+} else {
+    echo  '
+
+
+    <script src="../assets/libs/jquery/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+           <script type="text/javascript">   
+    
+                    $(document).ready(function(){
+    
+                     
+                      
+                      swal({
+                        icon: "error",
+                        title: "Error .",
+                        text: "Error",
+                      })
+                    });
+                  </script>
+    ';
+    
+        echo "<meta http-equiv=\"refresh\" content=\"1;URL=../medicine-deleted.php \">";
+
+}
+// add team
+if(isset($_POST['addteam']))  
+{
+$name = $_POST['name'];
+$email = $_POST['email'];
+$password = $_POST['password'];
+$type = $_POST['type'];
+// crypt pass
+$ciphering = "AES-128-CTR";
+$iv_length = openssl_cipher_iv_length($ciphering);
+$options   = 0;
+$encryption_iv = '1234567891011121';
+$encryption_key = "W3docs";
+@$encryption = openssl_encrypt($password, $ciphering, $encryption_key, $options, $encryption_iv);
+
+$sql4 = "INSERT into team (name,email,password,type) value('$name','$email','$encryption','$type')";
+$result4 =$con->query($sql4);
+
+    echo  '
+
+
+<script src="../assets/libs/jquery/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+       <script type="text/javascript">   
+
+                $(document).ready(function(){
+
+                 
+                  
+                  swal({
+                    icon: "success",
+                    title: "Good .",
+                    text: "Team Added",
+                  })
+                });
+              </script>
+';
+
+    echo "<meta http-equiv=\"refresh\" content=\"1;URL=../team-list.php \">";
+
+
+
+
+
+
+} else {
+    echo  '
+
+
+    <script src="../assets/libs/jquery/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+           <script type="text/javascript">   
+    
+                    $(document).ready(function(){
+    
+                     
+                      
+                      swal({
+                        icon: "error",
+                        title: "Error .",
+                        text: "Error",
+                      })
+                    });
+                  </script>
+    ';
+    
+        echo "<meta http-equiv=\"refresh\" content=\"1;URL=../add-team.php \">";
+
+}
+// update user
+
+if(isset($_POST['updateteam']))  
+{
+$id = $_POST['id'];
+$name = addslashes($_POST['name']);
+$email = $_POST['email'];
+$password = $_POST['password'];
+$type = $_POST['type'];
+
+$ciphering = "AES-128-CTR";
+$iv_length = openssl_cipher_iv_length($ciphering);
+$options   = 0;
+$encryption_iv = '1234567891011121';
+$encryption_key = "W3docs";
+@$encryption = openssl_encrypt($password, $ciphering, $encryption_key, $options, $encryption_iv);
+
+$sql2 = "UPDATE team set name='$name' , email='$email', password='$encryption', type='$type' where id=$id ";
+$result2 =$con->query($sql2);
+
+    echo  '
+
+
+<script src="../assets/libs/jquery/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+       <script type="text/javascript">   
+
+                $(document).ready(function(){
+
+                 
+                  
+                  swal({
+                    icon: "success",
+                    title: "Good .",
+                    text: "User updated",
+                  })
+                });
+              </script>
+';
+
+    echo "<meta http-equiv=\"refresh\" content=\"1;URL=../team-list.php \">";
+
+
+
+
+
+
+} else {
+    echo  '
+
+
+    <script src="../assets/libs/jquery/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+           <script type="text/javascript">   
+    
+                    $(document).ready(function(){
+    
+                     
+                      
+                      swal({
+                        icon: "error",
+                        title: "Error .",
+                        text: "Error",
+                      })
+                    });
+                  </script>
+    ';
+    
+        echo "<meta http-equiv=\"refresh\" content=\"1;URL=../team-list.php \">";
+
+}
+
+// delete team
+
+if(isset($_POST['deleteteam']))  
+{
+$id = $_POST['id'];
+
+$sql3 = "UPDATE team set is_deleted='Not Available' where id=$id ";
+$result3 =$con->query($sql3);
+
+    echo  '
+
+
+<script src="../assets/libs/jquery/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+       <script type="text/javascript">   
+
+                $(document).ready(function(){
+
+                 
+                  
+                  swal({
+                    icon: "success",
+                    title: "Good .",
+                    text: "User deleted",
+                  })
+                });
+              </script>
+';
+
+    echo "<meta http-equiv=\"refresh\" content=\"1;URL=../team-deleted.php \">";
+
+
+
+
+
+
+} else {
+    echo  '
+
+
+    <script src="../assets/libs/jquery/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+           <script type="text/javascript">   
+    
+                    $(document).ready(function(){
+    
+                     
+                      
+                      swal({
+                        icon: "error",
+                        title: "Error .",
+                        text: "Error",
+                      })
+                    });
+                  </script>
+    ';
+    
+        echo "<meta http-equiv=\"refresh\" content=\"1;URL=../team-deleted.php \">";
+
+}
+// update deleted user
+if(isset($_POST['updatedeluser']))  
+{
+$id = $_POST['id'];
+
+$sql3 = "UPDATE team set is_deleted='Available' where id=$id ";
+$result3 =$con->query($sql3);
+
+    echo  '
+
+
+<script src="../assets/libs/jquery/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+       <script type="text/javascript">   
+
+                $(document).ready(function(){
+
+                 
+                  
+                  swal({
+                    icon: "success",
+                    title: "Good .",
+                    text: "User Updated",
+                  })
+                });
+              </script>
+';
+
+    echo "<meta http-equiv=\"refresh\" content=\"1;URL=../team-deleted.php \">";
+
+
+
+
+
+
+} else {
+    echo  '
+
+
+    <script src="../assets/libs/jquery/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+           <script type="text/javascript">   
+    
+                    $(document).ready(function(){
+    
+                     
+                      
+                      swal({
+                        icon: "error",
+                        title: "Error .",
+                        text: "Error",
+                      })
+                    });
+                  </script>
+    ';
+    
+        echo "<meta http-equiv=\"refresh\" content=\"1;URL=../team-deleted.php \">";
+
+}

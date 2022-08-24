@@ -47,7 +47,7 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="medicine-list.php">Medicine List</a></li>
-                        <li><a href="ecommerce-orders.html">Orders</a></li>
+                        <li><a href="medicine-deleted.php">Medicine Deleted</a></li>
                         <li><a href="ecommerce-customers.html">Customers</a></li>
                         <li><a href="ecommerce-cart.html">Cart</a></li>
                         <li><a href="ecommerce-checkout.html">Checkout</a></li>
@@ -55,6 +55,16 @@
                         <li><a href="ecommerce-add-product.html">Add Product</a></li>
                     </ul>
                 </li>
+                <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="uil-user-circle"></i>
+                                    <span>Team</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="team-list.php">Team List</a></li>
+                                    <li><a href="team-deleted.php">Team Deleted</a></li>
+                                </ul>
+                            </li>
 
             </ul>
         </div>
