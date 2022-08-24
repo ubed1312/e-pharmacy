@@ -123,7 +123,7 @@ include_once('include/db.php');?>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="include/code.php" method="post" >
+                    <form action="include/code.php" method="post" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Name:</label>
                             <input type="text" class="form-control" id="name" name="name" required>

@@ -159,6 +159,8 @@ $description = addslashes($_POST['description']);
 
 $sql2 = "UPDATE medicines set name='$name' , item_code='$icode', stock='$stock', price='$price', expiry_date='$edate', grams='$grams' , type='$type' , description='$description' where id=$id ";
 $result2 =$con->query($sql2);
+if($result2 > 0)
+{
 
     echo  '
 
@@ -202,7 +204,7 @@ $result2 =$con->query($sql2);
                       swal({
                         icon: "error",
                         title: "Error .",
-                        text: "Error",
+                        text: "Error1",
                       })
                     });
                   </script>
@@ -210,7 +212,9 @@ $result2 =$con->query($sql2);
     
         echo "<meta http-equiv=\"refresh\" content=\"1;URL=../medicine-list.php \">";
 
-}
+}}
+
+
 // delete medicine
 
 if(isset($_POST['deletemedicine']))  
@@ -219,7 +223,7 @@ $id = $_POST['id'];
 
 $sql3 = "UPDATE medicines set is_deleted='Not Available' where id=$id ";
 $result3 =$con->query($sql3);
-
+if($result3 > 0){
     echo  '
 
 
@@ -270,15 +274,18 @@ $result3 =$con->query($sql3);
     
         echo "<meta http-equiv=\"refresh\" content=\"1;URL=../medicine-list.php \">";
 
-}
+}}
+
+
+
 // update deleted medicine
 if(isset($_POST['updatedel']))  
 {
 $id = $_POST['id'];
 
-$sql3 = "UPDATE medicines set is_deleted='Available' where id=$id ";
-$result3 =$con->query($sql3);
-
+$sql4 = "UPDATE medicines set is_deleted='Available' where id=$id ";
+$result4 =$con->query($sql4);
+if($result4 > 0){
     echo  '
 
 
@@ -329,7 +336,10 @@ $result3 =$con->query($sql3);
     
         echo "<meta http-equiv=\"refresh\" content=\"1;URL=../medicine-deleted.php \">";
 
-}
+}}
+
+
+
 // add team
 if(isset($_POST['addteam']))  
 {
@@ -345,9 +355,9 @@ $encryption_iv = '1234567891011121';
 $encryption_key = "W3docs";
 @$encryption = openssl_encrypt($password, $ciphering, $encryption_key, $options, $encryption_iv);
 
-$sql4 = "INSERT into team (name,email,password,type) value('$name','$email','$encryption','$type')";
-$result4 =$con->query($sql4);
-
+$sql5 = "INSERT into team (name,email,password,type) value('$name','$email','$encryption','$type')";
+$result5 =$con->query($sql5);
+if($result5 > 0){
     echo  '
 
 
@@ -398,7 +408,10 @@ $result4 =$con->query($sql4);
     
         echo "<meta http-equiv=\"refresh\" content=\"1;URL=../add-team.php \">";
 
-}
+}}
+
+
+
 // update user
 
 if(isset($_POST['updateteam']))  
@@ -416,8 +429,9 @@ $encryption_iv = '1234567891011121';
 $encryption_key = "W3docs";
 @$encryption = openssl_encrypt($password, $ciphering, $encryption_key, $options, $encryption_iv);
 
-$sql2 = "UPDATE team set name='$name' , email='$email', password='$encryption', type='$type' where id=$id ";
-$result2 =$con->query($sql2);
+$sql6 = "UPDATE team set name='$name' , email='$email', password='$encryption', type='$type' where id=$id ";
+$result6 =$con->query($sql6);
+if($result6 > 0){
 
     echo  '
 
@@ -469,7 +483,10 @@ $result2 =$con->query($sql2);
     
         echo "<meta http-equiv=\"refresh\" content=\"1;URL=../team-list.php \">";
 
-}
+}}
+
+
+
 
 // delete team
 
@@ -477,8 +494,9 @@ if(isset($_POST['deleteteam']))
 {
 $id = $_POST['id'];
 
-$sql3 = "UPDATE team set is_deleted='Not Available' where id=$id ";
-$result3 =$con->query($sql3);
+$sql7 = "UPDATE team set is_deleted='Not Available' where id=$id ";
+$result7 =$con->query($sql7);
+if($result7 > 0){
 
     echo  '
 
@@ -530,15 +548,19 @@ $result3 =$con->query($sql3);
     
         echo "<meta http-equiv=\"refresh\" content=\"1;URL=../team-deleted.php \">";
 
-}
+}}
+
+
+
+
 // update deleted user
 if(isset($_POST['updatedeluser']))  
 {
 $id = $_POST['id'];
 
-$sql3 = "UPDATE team set is_deleted='Available' where id=$id ";
-$result3 =$con->query($sql3);
-
+$sql8 = "UPDATE team set is_deleted='Available' where id=$id ";
+$result8 =$con->query($sql8);
+if($result8 > 0){
     echo  '
 
 
@@ -589,4 +611,4 @@ $result3 =$con->query($sql3);
     
         echo "<meta http-equiv=\"refresh\" content=\"1;URL=../team-deleted.php \">";
 
-}
+}}
