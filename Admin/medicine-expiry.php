@@ -30,7 +30,7 @@ include_once('include/db.php');?>
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-0">Medicine List</h4>
+                                <h4 class="mb-0">Medicine Expiry Date</h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
@@ -46,10 +46,6 @@ include_once('include/db.php');?>
 
                     <div class="row">
                         <div class="col-lg-12">
-                            <div>
-
-                                <button type="button" class="btn btn-success waves-effect waves-light mb-3" data-bs-toggle="modal" data-bs-target="#exampleModalScrollable"><i class="mdi mdi-plus me-1"></i> Add New Order</button>
-                            </div>
                             <div class="table-responsive mb-4">
                                 <table class="table table-centered datatable dt-responsive nowrap table-card-list" style="border-collapse: collapse; border-spacing: 0 12px; width: 100%;">
                                     <thead>
@@ -61,12 +57,12 @@ include_once('include/db.php');?>
                                             <th>Stock</th>
                                             <th>Grams</th>
                                             <th>Type</th>
-                                            <th style="width: 120px;">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                     <?php 
-                                    $sql="SELECT * from medicines where is_deleted='Available'  ";
+                                    $date = date("Y-m-d");
+                                    $sql="SELECT * from medicines where is_deleted='Available' and (expiry_date < '$date' )  ";
                                     $result = $con->query($sql);
                                     while ($row = $result->fetch_assoc()){
                                     ?>
@@ -96,12 +92,6 @@ include_once('include/db.php');?>
     <?php } ?>
                                             <td><?php echo $row['grams'] ?> </td>
                                             <td><?php echo $row['type'] ?> </td>
-                                            <td>
-                                            <a href="javascript:void(0);" class="px-3 text-primary update_data" id="<?php echo $row["id"]; ?>"><i class="uil uil-pen font-size-18"></i></a>
-                                            <a href="javascript:void(0);" class="px-3 text-success view_data" id="<?php echo $row["id"]; ?>"><i class="uil uil-eye font-size-18"></i></a>
-                                                <a href="javascript:void(0);" class="px-3 text-danger delete_data" id="<?php echo $row["id"]; ?>"><i class="uil uil-trash-alt font-size-18"></i></a>
- 
-                                            </td>
                                         </tr>
                                         <?php } ?>
                                     </tbody>
@@ -128,7 +118,7 @@ include_once('include/db.php');?>
         <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalScrollableTitle">Add Medicine</h5>
+                    <h5 class="modal-title" id="exampleModalScrollableTitle">Update Medicine</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                     </button>
                 </div>
@@ -148,7 +138,7 @@ include_once('include/db.php');?>
                         </div>
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Price:</label>
-                            <input type="number" step="0.01" class="form-control" id="price" name="price" required>
+                            <input type="text" class="form-control" id="price" name="price" required>
                         </div>
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Expiry Date:</label>
@@ -161,6 +151,7 @@ include_once('include/db.php');?>
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Type:</label>
                             <select class="form-select" aria-label="Default select example" name="type" id="type" required>
+                                <option selected>Open this select menu</option>
                                 <option value="Pharmacy">Pharmacy</option>
                                 <option value="Parapharmacy">Parapharmacy</option>
                             </select>
@@ -191,7 +182,7 @@ include_once('include/db.php');?>
         <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="edit">Update Medicine</h5>
+                    <h5 class="modal-title" id="edit">Add Medicine</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                     </button>
                 </div>

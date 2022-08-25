@@ -48,11 +48,8 @@
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="medicine-list.php">Medicine List</a></li>
                         <li><a href="medicine-deleted.php">Medicine Deleted</a></li>
-                        <li><a href="ecommerce-customers.html">Customers</a></li>
-                        <li><a href="ecommerce-cart.html">Cart</a></li>
-                        <li><a href="ecommerce-checkout.html">Checkout</a></li>
-                        <li><a href="ecommerce-shops.html">Shops</a></li>
-                        <li><a href="ecommerce-add-product.html">Add Product</a></li>
+                        <li><a href="medicine-expiry.php">Medicine Expiry Date</a></li>
+                        <li><a href="medicine-stockout.php">Medicine Stock Out </a></li>
                     </ul>
                 </li>
                 <li>

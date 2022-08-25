@@ -30,11 +30,11 @@ if(isset($_POST["update"]))
                         </div>
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Price:</label>
-                            <input type="text" class="form-control" id="price" name="price" value="'.$row['price'].'" required>
+                            <input type="number" step="0.01" class="form-control" id="price" name="price" value="'.$row['price'].'" required>
                         </div>
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Expiry Date:</label>
-                            <input type="date" class="form-control" id="edate" name="edate" min="'.$datet.'" value="'.$row['expiry_date'].'"   required>
+                            <input type="date" class="form-control" id="edate" name="edate" min="'.$row['expiry_date'].'" value="'.$row['expiry_date'].'"   required>
                         </div>
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Grams:</label>
