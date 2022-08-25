@@ -97,9 +97,10 @@ include_once('include/db.php');?>
                                             <td><?php echo $row['grams'] ?> </td>
                                             <td><?php echo $row['type'] ?> </td>
                                             <td>
-                                            <a href="javascript:void(0);" class="px-3 text-primary update_data" id="<?php echo $row["id"]; ?>"><i class="uil uil-pen font-size-18"></i></a>
-                                            <a href="javascript:void(0);" class="px-3 text-success view_data" id="<?php echo $row["id"]; ?>"><i class="uil uil-eye font-size-18"></i></a>
-                                                <a href="javascript:void(0);" class="px-3 text-danger delete_data" id="<?php echo $row["id"]; ?>"><i class="uil uil-trash-alt font-size-18"></i></a>
+                                            <a href="javascript:void(0);" class="px-3 text-primary update_data" id="<?php echo $row["id"]; ?>"><i class="uil uil-pen font-size-18"></i>Update</a>
+                                            <a href="javascript:void(0);" class="px-3 text-success view_data" id="<?php echo $row["id"]; ?>"><i class="uil uil-eye font-size-18"></i>See</a>
+                                                <a href="javascript:void(0);" class="px-3 text-danger delete_data" id="<?php echo $row["id"]; ?>"><i class="uil uil-trash-alt font-size-18"></i>Delete</a>
+                                                <a href="javascript:void(0);" class="px-3 text-warning image_data" id="<?php echo $row["id"]; ?>"><i class="uil uil-pen font-size-18"></i>Update Image</a>
  
                                             </td>
                                         </tr>
@@ -203,6 +204,33 @@ include_once('include/db.php');?>
                         <div class="modal-footer">
                     <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-success" name="updatemedicine">Update</button>
+                </div>
+                    </form>
+                </div>
+               
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- end modal -->
+
+        <!-- update image modal -->
+    <!-- Scrollable modal example-->
+    <div class="modal fade" id="image" tabindex="-1" role="dialog" aria-labelledby="image" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="image">Update Image Medicine</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body" >
+                    <form action="include/code.php" method="post" enctype="multipart/form-data">
+                    <input type="hidden" class="form-control" id="id" name="id" required>
+                       <div class="modal-body" id="imagem">
+                                    </div>
+                        <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-success" name="updateimagemedicine">Update</button>
                 </div>
                     </form>
                 </div>
@@ -316,6 +344,21 @@ include_once('include/db.php');?>
    success:function(data){
     $('#delm').html(data);
     $('#del').modal('show');
+   }
+  });
+ });
+</script>
+<script>
+     $(document).on('click', '.image_data', function(){
+  //$('#dataModal').modal();
+  var updateimage = $(this).attr("id");
+  $.ajax({
+   url:"select.php",
+   method:"POST",
+   data:{updateimage:updateimage},
+   success:function(data){
+    $('#imagem').html(data);
+    $('#image').modal('show');
    }
   });
  });

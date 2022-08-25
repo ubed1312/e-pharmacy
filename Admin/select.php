@@ -59,6 +59,33 @@ if(isset($_POST["update"]))
     $output .= '</table></div>';
     echo $output;
 }
+//update image 
+if(isset($_POST["updateimage"]))
+{
+ $output = '';
+
+ $query = "SELECT * FROM medicines WHERE id = '".$_POST["updateimage"]."'";
+ $result = mysqli_query($con, $query);
+ $output .= '  
+      <div class="table-responsive">  
+           <table class="table table-bordered">';
+    while($row = mysqli_fetch_array($result))
+    {
+     $output .= '
+ 
+     <input type="hidden" class="form-control" id="id" name="id" value="'.$row['id'].'"  required>
+                       <img src="'.$row['image'].'" class="rounded mx-auto d-block" width="200" height="auto">
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Image</label>
+                            <input type="file"  class="form-control" id="file" name="file" required>
+                        </div>
+                       
+                  
+     ';
+    }
+    $output .= '</table></div>';
+    echo $output;
+}
 // select
 if(isset($_POST["select"]))
 {
@@ -71,6 +98,10 @@ if(isset($_POST["select"]))
     while($row = mysqli_fetch_array($result))
     {
      $output .= '
+     <tr>  
+     <td width="30%"><label>Image</label></td>  
+     <td width="70%"><img src="'.$row['image'].'" class="rounded mx-auto d-block" width="200" height="auto"></td>  
+ </tr>
      <tr>  
             <td width="30%"><label>Name</label></td>  
             <td width="70%">'.$row["name"].'</td>  
