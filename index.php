@@ -183,11 +183,11 @@
                             <ul>
                                 <!-- Submenu -->
                                 <li class="ltn__category-menu-item ltn__category-menu-drop">
-                                    <a href="shop.html"><i class="icon-shopping-cart"></i>Pharmacy</a>
+                                    <a href="shop-pharmacy.php"><i class="icon-shopping-cart"></i>Pharmacy</a>
                                 </li>
                                 <!-- Submenu -->
                                 <li class="ltn__category-menu-item ltn__category-menu-drop">
-                                    <a href="shop.html"><i class="icon-shopping-bags"></i>Parapharmacy </a>
+                                    <a href="shop-parapharmacy.php"><i class="icon-shopping-bags"></i>Parapharmacy </a>
                                 </li>
                                 <!-- Single menu end -->
                             </ul>
@@ -373,7 +373,7 @@
                                                 <a href="product-details.html"><img src="Admin/<?php echo $rowpara['image'] ?>" width="200" height="auto" alt="#"></a>
                                                 <div class="product-badge">
                                                 </div>
-                                                <div class="product-hover-action">
+                                                <!-- <div class="product-hover-action">
                                                     <ul>
                                                         <li>
                                                             <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
@@ -390,7 +390,7 @@
                                                                 <i class="far fa-heart"></i></a>
                                                         </li>
                                                     </ul>
-                                                </div>
+                                                </div> -->
                                             </div>
                                             <div class="product-info">
                                                 <div class="product-ratting">

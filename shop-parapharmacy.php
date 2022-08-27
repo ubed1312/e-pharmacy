@@ -1,85 +1,10 @@
-<?php 
-include('include/db.php');
-session_start();
-include('include/log.php');
-?>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
-
-
+<head>
    <?php include('include/header.php') ?>
-<style>
-    .quantity {
-  position: relative;
-}
+</head>
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button
-{
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-input[type=number]
-{
-  -moz-appearance: textfield;
-}
-
-.quantity input {
-  width: 70px;
-  height: 42px;
-  line-height: 1.65;
-  float: left;
-  display: block;
-  padding: 0;
-  margin: 0;
-  padding-left: 20px;
-  border: 1px solid #eee;
-}
-
-.quantity input:focus {
-  outline: 0;
-}
-
-.quantity-nav {
-  float: left;
-  position: relative;
-  height: 42px;
-}
-
-.quantity-button {
-  position: relative;
-  cursor: pointer;
-  border-left: 1px solid #eee;
-  width: 20px;
-  text-align: center;
-  color: #333;
-  font-size: 13px;
-  font-family: "Trebuchet MS", Helvetica, sans-serif !important;
-  line-height: 1.7;
-  -webkit-transform: translateX(-100%);
-  transform: translateX(-100%);
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-}
-
-.quantity-button.quantity-up {
-  position: absolute;
-  height: 50%;
-  top: 0;
-  border-bottom: 1px solid #eee;
-}
-
-.quantity-button.quantity-down {
-  position: absolute;
-  bottom: -1px;
-  height: 50%;
-}
-</style>
 <body>
     <!--[if lte IE 9]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
@@ -91,9 +16,7 @@ input[type=number]
 <div class="body-wrapper">
 
     <!-- HEADER AREA START (header-3) -->
-    <header class="ltn__header-area ltn__header-3">       
-        <!-- ltn__header-top-area start -->
-       <?php include('include/top-header.php'); ?>
+    <?php include('include/top-header.php'); ?>
         <!-- ltn__header-top-area end --> 
         <!-- ltn__header-middle-area start -->
         <?php include('include/header-middle.php'); ?>
@@ -158,10 +81,10 @@ input[type=number]
                         <ul class="sub-menu">
                             <li><a href="about.html">About</a></li>
                             <li><a href="service.html">Services</a></li>
-                            <li><a href="service-details.html">Service Details</a></li>
+                            <!-- <li><a href="service-details.html">Service Details</a></li>
                             <li><a href="portfolio.html">Portfolio</a></li>
                             <li><a href="portfolio-2.html">Portfolio - 02</a></li>
-                            <li><a href="portfolio-details.html">Portfolio Details</a></li>
+                            <li><a href="portfolio-details.html">Portfolio Details</a></li> -->
                             <li><a href="team.html">Team</a></li>
                             <li><a href="team-details.html">Team Details</a></li>
                             <li><a href="faq.html">FAQ</a></li>
@@ -184,7 +107,7 @@ input[type=number]
                             <li><a href="register.html">Register</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">News</a>
+                    <!-- <li><a href="#">News</a>
                         <ul class="sub-menu">
                             <li><a href="blog.html">News</a></li>
                             <li><a href="blog-grid.html">News Grid</a></li>
@@ -192,26 +115,8 @@ input[type=number]
                             <li><a href="blog-right-sidebar.html">News Right sidebar</a></li>
                             <li><a href="blog-details.html">News details</a></li>
                         </ul>
-                    </li>
-                    <li><a href="#">Pages</a>
-                        <ul class="sub-menu">
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="service.html">Services</a></li>
-                            <li><a href="service-details.html">Service Details</a></li>
-                            <li><a href="portfolio.html">Portfolio</a></li>
-                            <li><a href="portfolio-2.html">Portfolio - 02</a></li>
-                            <li><a href="portfolio-details.html">Portfolio Details</a></li>
-                            <li><a href="team.html">Team</a></li>
-                            <li><a href="team-details.html">Team Details</a></li>
-                            <li><a href="faq.html">FAQ</a></li>
-                            <li><a href="history.html">History</a></li>
-                            <li><a href="add-listing.html">Add Listing</a></li>
-                            <li><a href="locations.html">Google Map Locations</a></li>
-                            <li><a href="404.html">404</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                            <li><a href="coming-soon.html">Coming Soon</a></li>
-                        </ul>
-                    </li>
+                    </li> -->
+                    
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
@@ -260,16 +165,16 @@ input[type=number]
     <div class="ltn__utilize-overlay"></div>
 
     <!-- BREADCRUMB AREA START -->
-    <div class="ltn__breadcrumb-area text-left bg-overlay-white-30 bg-image"  data-bs-bg="img/bg/medicines.jpg">
+    <div class="ltn__breadcrumb-area text-left bg-overlay-white-30 bg-image "  data-bs-bg="img/bg/shop.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="ltn__breadcrumb-inner">
-                        <h1 class="page-title">Product Details</h1>
+                        <h1 class="page-title">Shop Parapharmacy</h1>
                         <div class="ltn__breadcrumb-list">
                             <ul>
                                 <li><a href="index.html"><span class="ltn__secondary-color"><i class="fas fa-home"></i></span> Home</a></li>
-                                <li>Product Details</li>
+                                <li>Shop Parapharmacy</li>
                             </ul>
                         </div>
                     </div>
@@ -278,333 +183,139 @@ input[type=number]
         </div>
     </div>
     <!-- BREADCRUMB AREA END -->
-    <?php
-    include('Admin/include/db.php');
-    $id=$_REQUEST['id'];
-    $sql = "SELECT * from medicines where id=$id";
-    $rst = $con->query($sql);
-    $row = mysqli_fetch_array($rst);
-    ?>
-    <!-- SHOP DETAILS AREA START -->
-    <div class="ltn__shop-details-area pb-85">
+    
+    <!-- PRODUCT DETAILS AREA START -->
+    <div class="ltn__product-area ltn__product-gutter mb-120">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 col-md-12">
-                    <div class="ltn__shop-details-inner mb-60">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="ltn__shop-details-img-gallery">
-                                    <div class="ltn__shop-details-large-img">
-                                        <div class="single-large-img">
-                                            <a href="img/product/1.png" data-rel="lightcase:myCollection">
-                                                <img src="Admin/<?php echo $row['image'] ?>" alt="Image">
-                                            </a>
-                                        </div>
+                <div class="col-lg-12">
+                    <div class="ltn__shop-options">
+                        <ul>
+                            <!-- <li>
+                                <div class="ltn__grid-list-tab-menu ">
+                                    <div class="nav">
+                                        <a class="active show" data-bs-toggle="tab" href="#liton_product_grid"><i class="fas fa-th-large"></i></a>
+                                        <a data-bs-toggle="tab" href="#liton_product_list"><i class="fas fa-list"></i></a>
                                     </div>
-                                 
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                    <h3><?php echo $row['name'] ?></h3>
-                                    <div class="product-price">
-                                        <span style="color:#0A9A73;"><?php echo $row['price'] ?> DHS</span>
-                                    </div>
-                                    <div class="modal-product-meta ltn__product-details-menu-1">
-                                        <ul>
-                                            <li>
-                                                <strong>Type :</strong> 
-                                                <span>
-                                                    <?php 
-                                                    if($row['type']='Pharmacy'){
-                                                    ?>
-                                                    <a style="color:green;">with prescription</a>
-                                                    <?php } else{ ?>
-                                                    <a style="color:red;">without prescription</a>
-                                                    <?php } ?>
-                                                </span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="ltn__product-details-menu-2">
-                                        <form action="include/code.php" method="post">
-                                        <ul>
-                                            <li>
-                                                <div class="btn btn-effect-1 quantity">
-                                                    <input type="number" class="form-control" min="1" max="5" name="qty" required>
-                                                    
-                                                </div>
-                                                <input type="hidden" class="form-control" value="<?php echo $row['id'] ?>" name="idm">
-                                            </li>
-                                            <li>
-                                                <?php
-                                                if(isset($_SESSION['Email2'])){
-                                                    ?>
-                                                     <button type="submit" class="theme-btn-1 btn btn-effect-1" title="Add to Cart" name="addtocart">
-                                                    <i class="fas fa-shopping-cart"></i>
-                                                    <span>ADD TO CART</span>
-                                                </button>
-                                                    <?php
-                                                }else{
-                                                ?>
-                                                <button type="submit" class="theme-btn-1 btn btn-effect-1" title="Add to Cart" name="addtocart">
-                                                    <i class="fas fa-lock"></i>
-                                                    <span>Login</span>
-                                                </button>
-                                                <?php } ?>
-                                            </li>
-                                        </ul>
-                                        </form>
-                                    </div>
-                                    <!-- <div class="ltn__product-details-menu-3">
-                                        <ul>
-                                            <li>
-                                                <a href="#" class="" title="Wishlist" data-bs-toggle="modal" data-bs-target="#liton_wishlist_modal">
-                                                    <i class="far fa-heart"></i>
-                                                    <span>Add to Wishlist</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="" title="Compare" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                                    <i class="fas fa-exchange-alt"></i>
-                                                    <span>Compare</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div> -->
-                                    <!-- <hr>
-                                    <div class="ltn__social-media">
-                                        <ul>
-                                            <li>Share:</li>
-                                            <li><a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                                            <li><a href="#" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                                            <li><a href="#" title="Linkedin"><i class="fab fa-linkedin"></i></a></li>
-                                            <li><a href="#" title="Instagram"><i class="fab fa-instagram"></i></a></li>
-                                            
-                                        </ul>
-                                    </div> -->
-                                    <!-- <hr>
-                                    <div class="ltn__safe-checkout">
-                                        <h5>Guaranteed Safe Checkout</h5>
-                                        <img src="img/icons/payment-2.png" alt="Payment Image">
-                                    </div> -->
-                                </div>
-                            </div>
-                        </div>
+                            </li> -->
+                            <!-- <li>
+                               <div class="short-by text-center">
+                                    <select class="nice-select">
+                                        <option>Default sorting</option>
+                                        <option>Sort by popularity</option>
+                                        <option>Sort by new arrivals</option>
+                                        <option>Sort by price: low to high</option>
+                                        <option>Sort by price: high to low</option>
+                                    </select>
+                                </div> 
+                            </li> -->
+                            <li>
+                            <?php 
+                             include('Admin/include/db.php');
+                                    $date = date("Y-m-d");
+                                    $para = "SELECT count(id) as countm from medicines where type='Parapharmacy' and is_deleted='Available' and expiry_date > '$date' ";
+                                    $rstparac = $con->query($para);
+                                    $countm = mysqli_fetch_assoc($rstparac);
+                                    ?>
+                               <div class="showing-product-number text-right">
+                                    <span>Showing <?php echo $countm['countm'] ?> results</span>
+                                </div> 
+                            </li>
+                        </ul>
                     </div>
-                    <!-- Shop Tab Start -->
-                    <div class="ltn__shop-details-tab-inner ltn__shop-details-tab-inner-2">
-                        <div class="ltn__shop-details-tab-menu">
-                            <div class="nav">
-                                <a class="active show" data-bs-toggle="tab" href="#liton_tab_details_1_1">Description</a>
-                                <a data-bs-toggle="tab" href="#liton_tab_details_1_2" class="">Reviews</a>
-                            </div>
-                        </div>
-                        <div class="tab-content">
-                            <div class="tab-pane fade active show" id="liton_tab_details_1_1">
-                                <div class="ltn__shop-details-tab-content-inner">
-                                    <h4 class="title-2"><?php echo $row['name'] ?></h4>
-                                    <p><?php echo $row['description'] ?></p> 
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="liton_tab_details_1_2">
-                                <div class="ltn__shop-details-tab-content-inner">
-                                    <h4 class="title-2">Customer Reviews</h4>
-                                    <div class="product-ratting">
-                                        <ul>
-                                            <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fas fa-star-half-alt"></i></a></li>
-                                            <li><a href="#"><i class="far fa-star"></i></a></li>
-                                            <li class="review-total"> <a href="#"> ( 95 Reviews )</a></li>
-                                        </ul>
-                                    </div>
-                                    <hr>
-                                    <!-- comment-area -->
-                                    <div class="ltn__comment-area mb-30">
-                                        <div class="ltn__comment-inner">
-                                            <ul>
-                                                <li>
-                                                    <div class="ltn__comment-item clearfix">
-                                                        <div class="ltn__commenter-img">
-                                                            <img src="img/testimonial/1.jpg" alt="Image">
-                                                        </div>
-                                                        <div class="ltn__commenter-comment">
-                                                            <h6><a href="#">Adam Smit</a></h6>
-                                                            <div class="product-ratting">
-                                                                <ul>
-                                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                                    <li><a href="#"><i class="fas fa-star-half-alt"></i></a></li>
-                                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                                </ul>
-                                                            </div>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, omnis fugit corporis iste magnam ratione.</p>
-                                                            <span class="ltn__comment-reply-btn">September 3, 2020</span>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="ltn__comment-item clearfix">
-                                                        <div class="ltn__commenter-img">
-                                                            <img src="img/testimonial/3.jpg" alt="Image">
-                                                        </div>
-                                                        <div class="ltn__commenter-comment">
-                                                            <h6><a href="#">Adam Smit</a></h6>
-                                                            <div class="product-ratting">
-                                                                <ul>
-                                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                                    <li><a href="#"><i class="fas fa-star-half-alt"></i></a></li>
-                                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                                </ul>
-                                                            </div>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, omnis fugit corporis iste magnam ratione.</p>
-                                                            <span class="ltn__comment-reply-btn">September 2, 2020</span>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="ltn__comment-item clearfix">
-                                                        <div class="ltn__commenter-img">
-                                                            <img src="img/testimonial/2.jpg" alt="Image">
-                                                        </div>
-                                                        <div class="ltn__commenter-comment">
-                                                            <h6><a href="#">Adam Smit</a></h6>
-                                                            <div class="product-ratting">
-                                                                <ul>
-                                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                                    <li><a href="#"><i class="fas fa-star-half-alt"></i></a></li>
-                                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                                </ul>
-                                                            </div>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, omnis fugit corporis iste magnam ratione.</p>
-                                                            <span class="ltn__comment-reply-btn">September 2, 2020</span>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <!-- comment-reply -->
-                                    <div class="ltn__comment-reply-area ltn__form-box mb-30">
-                                        <form action="#">
-                                            <h4 class="title-2">Add a Review</h4>
-                                            <div class="mb-30">
-                                                <div class="add-a-review">
-                                                    <h6>Your Ratings:</h6>
-                                                    <div class="product-ratting">
-                                                        <ul>
-                                                            <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-star-half-alt"></i></a></li>
-                                                            <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="input-item input-item-textarea ltn__custom-icon">
-                                                <textarea placeholder="Type your comments...."></textarea>
-                                            </div>
-                                            <div class="input-item input-item-name ltn__custom-icon">
-                                                <input type="text" placeholder="Type your name....">
-                                            </div>
-                                            <div class="input-item input-item-email ltn__custom-icon">
-                                                <input type="email" placeholder="Type your email....">
-                                            </div>
-                                            <div class="input-item input-item-website ltn__custom-icon">
-                                                <input type="text" name="website" placeholder="Type your website....">
-                                            </div>
-                                            <label class="mb-0"><input type="checkbox" name="agree"> Save my name, email, and website in this browser for the next time I comment.</label>
-                                            <div class="btn-wrapper">
-                                                <button class="btn theme-btn-1 btn-effect-1 text-uppercase" type="submit">Submit</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Shop Tab End -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- SHOP DETAILS AREA END -->
+                    <div class="tab-content">
+                        <div class="tab-pane fade active show" id="liton_product_grid">
+                            <div class="ltn__product-tab-content-inner ltn__product-grid-view">
+                                <div class="row">
+                                    <!-- ltn__product-item -->
+                                    <?php
+ include('Admin/include/db.php');
+ $date = date("Y-m-d");
+$showRecordPerPage = 12;
+if (isset($_GET['page']) && !empty($_GET['page'])) {
+    $currentPage = $_GET['page'];
+} else {
+    $currentPage = 1;
+}
+$startFrom = ($currentPage * $showRecordPerPage) - $showRecordPerPage;
+$totalEmpSQL = "SELECT * from medicines where type='Parapharmacy' and is_deleted='Available' and expiry_date > '$date'   ";
+$allEmpResult = mysqli_query($con, $totalEmpSQL);
+$totalEmployee = mysqli_num_rows($allEmpResult);
+$lastPage = ceil($totalEmployee / $showRecordPerPage);
+$firstPage = 1;
+$nextPage = $currentPage + 1;
+$previousPage = $currentPage - 1;
+$empSQL = "SELECT * from medicines where type='Parapharmacy' and is_deleted='Available' and expiry_date > '$date'   LIMIT $startFrom, $showRecordPerPage ";
+$empResult = mysqli_query($con, $empSQL);
+?>
 
-    <!-- PRODUCT SLIDER AREA START -->
-    <div class="ltn__product-slider-area ltn__product-gutter pb-70">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title-area ltn__section-title-2">
-                        <h4 class="title-2">Related Products<span>.</span></h1>
-                    </div>
-                </div>
-            </div>
-            <div class="row ltn__related-product-slider-one-active slick-arrow-1">
-                <!-- ltn__product-item -->
-                <?php
-                $id=$_REQUEST['id'];
-                $sql1="SELECT * from medicines where id=$id";
-                $rst1 = $con->query($sql1);
-                $row1 = mysqli_fetch_array($rst1);
-                $type= $row1['type'];
-                $sql2="SELECT * from medicines where type='$type' and id!=$id limit 5";
-                $rst2 = $con->query($sql2);
-                while ($row2 = $rst2->fetch_assoc()){
-                ?>
-                <div class="col-lg-12">
-                    <div class="ltn__product-item ltn__product-item-3 text-center">
-                        <div class="product-img">
-                            <a href="product-page.php?id=<?php echo $row2['id'] ?>"><img src="Admin/<?php echo $row2['image'] ?>" alt="#"></a>
-                           
-                            <!-- <div class="product-hover-action">
-                                <ul>
-                                    <li>
-                                        <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="far fa-eye"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
-                                            <i class="fas fa-shopping-cart"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="Wishlist" data-bs-toggle="modal" data-bs-target="#liton_wishlist_modal">
-                                            <i class="far fa-heart"></i></a>
-                                    </li>
-                                </ul>
-                            </div> -->
-                        </div>
-                        <div class="product-info">
-                            <!-- <div class="product-ratting">
-                                <ul>
-                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fas fa-star-half-alt"></i></a></li>
-                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                </ul>
-                            </div> -->
-                            <h2 class="product-title"><a href="product-page.php?id=<?php echo $row2['id'] ?>"><?php echo $row2['name'] ?></a></h2>
-                            <div class="product-price">
-                                <span><?php echo $row2['price'] ?> DHS</span>
+<?php
+while ($rowpara = mysqli_fetch_assoc($empResult)) {
+?>
+                                    <div class="col-xl-3 col-lg-4 col-sm-6 col-6">
+                                        <div class="ltn__product-item ltn__product-item-3 text-center">
+                                            <div class="product-img">
+                                                <a href="product-page.php?id=<?php echo $rowpara['id'] ?>"><img src="Admin/<?php echo $rowpara['image'] ?>" alt="#"></a>
+                                                <!-- <div class="product-badge">
+                                                    <ul>
+                                                        <li class="sale-badge">New</li>
+                                                    </ul>
+                                                </div> -->
+                                               
+                                            </div>
+                                            <div class="product-info">
+                                                <!-- <div class="product-ratting">
+                                                    <ul>
+                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fas fa-star-half-alt"></i></a></li>
+                                                        <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                    </ul>
+                                                </div> -->
+                                                <h2 class="product-title"><a href="product-page.php?id=<?php echo $rowpara['id'] ?>"><?php echo $rowpara['name'] ?></a></h2>
+                                                <div class="product-price">
+                                                    <span><?php echo $rowpara['price'] ?> DHS</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?php } ?>
+                                    <!--  -->
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="ltn__pagination-area text-center">
+                        <div class="ltn__pagination">
+                        <ul>
+                                <?php if ($currentPage != $firstPage) { ?>
+                                <li>
+                                    <a href="?page=<?php echo $firstPage ?>"><i class="fas fa-angle-double-left"></i></a>
+                                </li>
+                                <?php } ?> 
+                                <?php if ($currentPage >= 2) { ?>
+                                <li>
+                                    <a href="?page=<?php echo $previousPage ?>"><?php echo $previousPage ?></a>
+                                </li>
+                                <?php } ?>
+                                <li class="active">
+                                    <a href="?page=<?php echo $currentPage ?>"><?php echo $currentPage ?></a>
+                                </li>
+                                <?php if ($currentPage != $lastPage) { ?>
+                                <li>
+                                    <a href="?page=<?php echo $lastPage ?>"><i class="fas fa-angle-double-right"></i></a>
+                                </li>
+                                <?php } ?>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <?php } ?>
             </div>
         </div>
     </div>
-    <!-- PRODUCT SLIDER AREA END -->
+    <!-- PRODUCT DETAILS AREA END -->
 
     <!-- CALL TO ACTION START (call-to-action-6) -->
     <div class="ltn__call-to-action-area call-to-action-6 before-bg-bottom" data-bs-bg="img/1.jpg--">
@@ -957,45 +668,8 @@ input[type=number]
 </div>
 <!-- Body main wrapper end -->
 
-   <?php include('include/js.php') ?>
-  <script>
-    
-
-    jQuery('<div class="quantity-nav"><div class="quantity-button quantity-up">+</div><div class="quantity-button quantity-down">-</div></div>').insertAfter('.quantity input');
-    jQuery('.quantity').each(function() {
-      var spinner = jQuery(this),
-        input = spinner.find('input[type="number"]'),
-        btnUp = spinner.find('.quantity-up'),
-        btnDown = spinner.find('.quantity-down'),
-        min = input.attr('min'),
-        max = input.attr('max');
-
-      btnUp.click(function() {
-        var oldValue = parseFloat(input.val());
-        if (oldValue >= max) {
-          var newVal = oldValue;
-        } else {
-          var newVal = oldValue + 1;
-        }
-        spinner.find("input").val(newVal);
-        spinner.find("input").trigger("change");
-      });
-
-      btnDown.click(function() {
-        var oldValue = parseFloat(input.val());
-        if (oldValue <= min) {
-          var newVal = oldValue;
-        } else {
-          var newVal = oldValue - 1;
-        }
-        spinner.find("input").val(newVal);
-        spinner.find("input").trigger("change");
-      });
-
-    });
-
-
-  </script>
+    <!-- All JS Plugins -->
+  <?php include('include/js.php') ?>
 </body>
 </html>
 

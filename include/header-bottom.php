@@ -11,8 +11,8 @@
                             <nav>
                                 <div class="ltn__main-menu">
                                     <ul>
-                                        <li class="menu-icon"><a href="#">Home</a>
-                                            <ul class="sub-menu menu-pages-img-show ltn__sub-menu-col-2---">
+                                        <li><a href="index.php">Home</a>
+                                            <!-- <ul class="sub-menu menu-pages-img-show ltn__sub-menu-col-2---">
                                                 <li>
                                                     <a href="index.html">Home Style 01</a>
                                                     <img src="img/home-demos/home-1.jpg" alt="#">
@@ -25,7 +25,7 @@
                                                     <a href="index-3.html">Home Style 03</a>
                                                     <img src="img/home-demos/home-3.jpg" alt="#">
                                                 </li>
-                                            </ul>
+                                            </ul> -->
                                         </li>
                                         <li class="menu-icon"><a href="#">About</a>
                                             <ul>
@@ -43,12 +43,11 @@
                                         </li>
                                         <li class="menu-icon"><a href="#">Shop</a>
                                             <ul>
-                                                <li><a href="shop.html">Shop</a></li>
-                                                <li><a href="shop-grid.html">Shop Grid</a></li>
-                                                <li><a href="shop-left-sidebar.html">Shop Left sidebar</a></li>
-                                                <li><a href="shop-right-sidebar.html">Shop right sidebar</a></li>
-                                                <li><a href="product-details.html">Shop details </a></li>
-                                                <li><a href="#">Other Pages <span class="float-right">>></span></a>
+                                                <li><a href="shop-parapharmacy.php">Shop Parapharmacy</a></li>
+                                                <li><a href="shop-pharmacy.php">Shop Pharmacy</a></li>
+                                                <!-- <li><a href="shop-right-sidebar.html">Shop right sidebar</a></li>
+                                                <li><a href="product-details.html">Shop details </a></li> -->
+                                                <!-- <li><a href="#">Other Pages <span class="float-right"></span></a>
                                                     <ul>
                                                         <li><a href="cart.html">Cart</a></li>
                                                         <li><a href="wishlist.html">Wishlist</a></li>
@@ -58,7 +57,7 @@
                                                         <li><a href="login.html">Sign in</a></li>
                                                         <li><a href="register.html">Register</a></li>
                                                     </ul>
-                                                </li>
+                                                </li> -->
                                             </ul>
                                         </li>
                                         <!-- <li class="menu-icon"><a href="#">News</a>
