@@ -330,10 +330,18 @@ input[type=number]
                                         <ul>
                                             <li>
                                                 <div class="btn btn-effect-1 quantity">
-                                                    <input type="number" class="form-control" min="1" max="5" name="qty" required>
+                                                    <input type="number" class="form-control" value="1" min="1" max="5" name="qty" required>
                                                     
                                                 </div>
                                                 <input type="hidden" class="form-control" value="<?php echo $row['id'] ?>" name="idm">
+                                                <?php
+                                                if(isset($_SESSION['Email2'])){
+                                                    ?>
+                                                <input type="hidden" class="form-control" value="<?php echo $_SESSION['Email2'] ?>" name="user">
+                                                <?php
+                                                }else{
+                                                ?>
+                                                <?php } ?>
                                             </li>
                                             <li>
                                                 <?php
@@ -346,10 +354,10 @@ input[type=number]
                                                     <?php
                                                 }else{
                                                 ?>
-                                                <button type="submit" class="theme-btn-1 btn btn-effect-1" title="Add to Cart" name="addtocart">
-                                                    <i class="fas fa-lock"></i>
-                                                    <span>Login</span>
-                                                </button>
+                                                <a href="login.php" class="theme-btn-1 btn btn-effect-1" title="Add to Cart" name="addtocart">
+                                                    <i class="fas fa-shopping-cart"></i>
+                                                    <span>ADD TO CART</span>
+                                                </a>
                                                 <?php } ?>
                                             </li>
                                         </ul>

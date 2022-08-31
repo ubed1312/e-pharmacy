@@ -80,21 +80,19 @@ $result =$con->query($sql);
 
 // pass order
 include('db.php');
-session_start();
-include('log.php');
 if(isset($_POST['addtocart']))  
 {
 $qty = $_POST['qty'];
 $idm = $_POST['idm'];
-$user = $_SESSION['Email2'];
+$user = $_POST['user'];
 $date=date("Y/m/d h:i:s");
 
 
 
 $select ="SELECT * from medicines_order where id_m='$idm' and id_user='$user' and valid='non'";
-$rstselect = $con->query($select);
+$rstselect1 = $con->query($select);
 
-if ($rstselect->num_rows > 0)
+if($rstselect1->num_rows >0)
 {
   echo  '
 
@@ -147,4 +145,278 @@ $result =$con->query($sql);
 
 
  }
+}
+// update order
+include('db.php');
+if(isset($_POST['updateqty']))  
+{
+$qty = $_POST['qty'];
+$idm = $_POST['idm'];
+$user = $_POST['user'];
+$date=date("Y/m/d h:i:s");
+
+
+
+$updateqty ="UPDATE medicines_order set qty='$qty' where id_m='$idm' and id_user='$user' and valid='non'";
+$rstselect1 = $con->query($updateqty);
+
+if($rstselect1 >0)
+{
+  echo  '
+
+
+  <script src="../Admin/assets/libs/jquery/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+         <script type="text/javascript">   
+  
+                  $(document).ready(function(){
+  
+                   
+                    
+                    swal({
+                      icon: "success",
+                      title: "Good .",
+                      text: "Quantity Updated",
+                    })
+                  });
+                </script>
+  ';
+  
+      echo "<meta http-equiv=\"refresh\" content=\"1;URL=../cart.php \">";
+
+}else{
+
+
+    echo  '
+
+
+    <script src="../Admin/assets/libs/jquery/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+           <script type="text/javascript">   
+    
+                    $(document).ready(function(){
+    
+                     
+                      
+                      swal({
+                        icon: "error",
+                        title: "Error .",
+                        text: "Error",
+                      })
+                    });
+                  </script>
+    ';
+    
+        echo "<meta http-equiv=\"refresh\" content=\"1;URL=../cart.php \">";
+
+
+ }
+}
+// update order
+include('db.php');
+if(isset($_POST['deletep']))  
+{
+$id = $_POST['idp'];
+$user = $_POST['user'];
+$date=date("Y/m/d h:i:s");
+
+
+
+$updateqty ="UPDATE medicines_order set is_deleted=1 where id_user='$user' and id='$id'";
+$rstselect1 = $con->query($updateqty);
+
+if($rstselect1 >0)
+{
+  echo  '
+
+
+  <script src="../Admin/assets/libs/jquery/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+         <script type="text/javascript">   
+  
+                  $(document).ready(function(){
+  
+                   
+                    
+                    swal({
+                      icon: "success",
+                      title: "Good .",
+                      text: "Product Deleted",
+                    })
+                  });
+                </script>
+  ';
+  
+      echo "<meta http-equiv=\"refresh\" content=\"1;URL=../cart.php \">";
+
+}else{
+
+
+    echo  '
+
+
+    <script src="../Admin/assets/libs/jquery/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+           <script type="text/javascript">   
+    
+                    $(document).ready(function(){
+    
+                     
+                      
+                      swal({
+                        icon: "error",
+                        title: "Error .",
+                        text: "Error",
+                      })
+                    });
+                  </script>
+    ';
+    
+        echo "<meta http-equiv=\"refresh\" content=\"1;URL=../cart.php \">";
+
+
+ }
+}
+// update order
+include('db.php');
+// update image medicine
+if(isset($_POST['cod']))  
+{
+  $user= $_POST['email'];
+  $phone= $_POST['phone'];
+  $address= $_POST['address'];
+  $file = $_FILES['file'];
+  $fileName = $_FILES['file']['name'];
+  $fileTmpName = $_FILES['file']['tmp_name'];
+  $fileSize = $_FILES['file']['size'];
+  $fileError = $_FILES['file']['error'];
+  $fileType = $_FILES['file']['type'];
+  
+  
+      $fileExt = explode( '.', $fileName);
+       $fileActualExt = strtolower(end($fileExt));
+  
+  
+  $allowed = array('png', 'jpg', 'jpeg');
+  
+  //Tu fais les vérifications nécéssaires
+  if(in_array($fileActualExt, $allowed))
+  //Si l'extension n'est pas dans le tableau
+  {
+  if ($fileError === 0) {
+   
+   if ($fileSize < 5000000) {
+  
+  
+     $fileNameNew = uniqid('', true).".".$fileActualExt;
+     $fileDestination = '../Admin/cp/'.$fileNameNew;
+     move_uploaded_file($fileTmpName , $fileDestination);
+  
+  
+  
+        
+         $fileDestination1 = 'cp/'.$fileNameNew;
+  
+  
+        $sql1 = "UPDATE medicines_order set CIN='$fileDestination1' , valid_user='oui' where id_user='$user' and valid_user='non' ";
+        $result1 =$con->query($sql1);
+
+        $sql22 = "UPDATE users set address='$address' , phone='$phone' where username='$user'  ";
+        $result22 =$con->query($sql22);
+  
+      echo  '
+  
+  
+  <script src="../Admin/assets/libs/jquery/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+         <script type="text/javascript">   
+  
+                  $(document).ready(function(){
+  
+                   
+                    
+                    swal({
+                      icon: "success",
+                      title: "Bien .",
+                      text: "Order Valid",
+                    })
+                  });
+                </script>
+  ';
+  
+      echo "<meta http-equiv=\"refresh\" content=\"1;URL=../medicine-list.php \">";
+  
+   } else {
+   
+    echo  '
+  
+  
+    <script src="../Admin/assets/libs/jquery/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+           <script type="text/javascript">   
+    
+                    $(document).ready(function(){
+    
+                     
+                      
+                      swal({
+                        icon: "erreur",
+                        title: "Ouups ..",
+                        text: "Grande Taille Image",
+                      })
+                    });
+                  </script>
+    ';
+    echo "<meta http-equiv=\"refresh\" content=\"1;URL=../medicine-list.php \">";
+  
+   }
+  } else {
+  
+  
+    echo  '
+  
+  
+    <script src="../Admin/assets/libs/jquery/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+           <script type="text/javascript">   
+    
+                    $(document).ready(function(){
+    
+                     
+                      
+                      swal({
+                        icon: "erreur",
+                        title: "Ouups ..",
+                        text: "Erreur de l upload Image",
+                      })
+                    });
+                  </script>
+    ';
+    echo "<meta http-equiv=\"refresh\" content=\"1;URL=../medicine-list.php \">";
+  }
+  
+  } else {
+  
+  
+    echo  '
+  
+  
+    <script src="../Admin/assets/libs/jquery/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+           <script type="text/javascript">   
+    
+                    $(document).ready(function(){
+    
+                     
+                      
+                      swal({
+                        icon: "error",
+                        title: "Ouups ..",
+                        text: "Vous ne pouvez pas uploader ce type",
+                      })
+                    });
+                  </script>
+    ';
+    echo "<meta http-equiv=\"refresh\" content=\"1;URL=../medicine-list.php \">";
+  }
 }
