@@ -249,9 +249,12 @@ if (!isset($_SESSION['Email1'])) {
                                                 <td class="cart-product-price" width="16%"><?php echo $row['price'] ?> DHS</td>
                                                 <td class="cart-product-price" width="16%"><?php echo $row['qty'] ?></td>
                                                 <td width="16%"><?php echo ($row['qty'] * $row['price']) ?> DHS</td>
+                                                <?php if($row['valid_user'] === 'non'){ ?>
                                                 <td width="16%"> <a class="passingID" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="<?php echo $row['idd'] ?>" data-qty="<?php echo $row['qty'] ?>"><i class="icon-edit" style="color:green;"> Update</i></a>
                                                     <a class="deleteID" data-bs-toggle="modal" data-bs-target="#delete" data-id="<?php echo $row['id'] ?>"><i class="icon-info" style="color:red;">X Delete</i></a>
-                                                </td>
+                                                </td><?php } else{ ?>
+                                                   <td><p style="color:green;">Order being checked</p></td> 
+                                                    <?php } ?>
                                             </tr>
                                         <?php } ?>
                                     </tbody>
@@ -259,10 +262,11 @@ if (!isset($_SESSION['Email1'])) {
                             </div>
                             <?php
                             $user = $_SESSION['Email2'];
-                            $query = "SELECT * , sum(price*qty) as sumu from medicines_order , medicines where id_user='$user' and valid='non' and  medicines.id=medicines_order.id_m and medicines_order.is_deleted='0'  ";
+                            $query = "SELECT * , sum(price*qty) as sumu from medicines_order , medicines where id_user='$user' and valid='non' and  medicines.id=medicines_order.id_m and medicines_order.is_deleted='0' and valid_user='non'  ";
                             $rst = $con->query($query);
                             $row1 = mysqli_fetch_array($rst);
                             ?>
+                            <?php if($row1['valid_user'] === 'non'){ ?>
                             <div class="shoping-cart-total mt-50">
                                 <h4>Cart Totals</h4>
                                 <table class="table">
@@ -285,6 +289,7 @@ if (!isset($_SESSION['Email1'])) {
                                     <a href="checkout.php" class="theme-btn-1 btn btn-effect-1">Proceed to checkout</a>
                                 </div>
                             </div>
+                            <?php }?>
                         </div>
                     </div>
                 </div>

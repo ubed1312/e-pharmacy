@@ -8,7 +8,7 @@
             <?php
             include('db.php');
             $user = $_SESSION['Email2'];
-            $cart = "SELECT * , medicines.id as idd   from medicines_order , medicines where id_user='$user' and medicines_order.id_m=medicines.id and medicines_order.is_deleted=0";
+            $cart = "SELECT * , medicines.id as idd   from medicines_order , medicines where id_user='$user' and medicines_order.id_m=medicines.id and medicines_order.is_deleted=0 and valid_user='non'";
             $rstcart = $con->query($cart);
             while ($rowcart = $rstcart->fetch_assoc()) {
             ?>
@@ -25,7 +25,7 @@
         </div>
         <?php
 
-        $select11 = "SELECT * , sum(price*qty) as sumorder from medicines_order , medicines where id_user='$user' and medicines_order.id_m=medicines.id and medicines_order.is_deleted=0";
+        $select11 = "SELECT * , sum(price*qty) as sumorder from medicines_order , medicines where id_user='$user' and medicines_order.id_m=medicines.id and medicines_order.is_deleted=0 and valid_user='non'";
         $rst11 = $con->query($select11);
         $row11 = mysqli_fetch_array($rst11);
         ?>
@@ -35,7 +35,6 @@
             </div>
             <div class="btn-wrapper">
                 <a href="cart.php" class="theme-btn-1 btn btn-effect-1">View Cart</a>
-                <a href="cart.html" class="theme-btn-2 btn btn-effect-2">Checkout</a>
             </div>
             <!-- <p>Free Shipping on All Orders Over $100!</p> -->
         </div>

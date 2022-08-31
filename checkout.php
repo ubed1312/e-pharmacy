@@ -248,25 +248,21 @@ session_start();
                                                     <input type="text" name="phone" placeholder="phone number*" value="<?php echo $rowuser['phone'];  ?>" required>
                                                 </div>
                                             </div>
-                                            <h6>CIN (image)*</h6>
-                                            <div class="col-md-12">
-                                                <div class="input-item">
-                                                    <input type="file" name="file" class="form-control" placeholder="CIN*" required>
-                                                </div>
-                                            </div>
                                             <?php
                                             include('include/db.php');
                                             $user = $_SESSION['Email2'];
-                                            $query1 = "SELECT * from medicines_order where id_user='$user' ";
+                                            $query1 = "SELECT * from medicines_order , medicines where id_user='$user' and medicines.id = medicines_order.id_m and type='Pharmacy' and valid_user='non' ";
                                             $result1 = $con->query($query1);
                                             $row2 = mysqli_fetch_array($result1);
+                                            if(isset($row2)){
                                             ?>
                                             <h6>Prescription (image)*</h6>
                                             <div class="col-md-12">
                                                 <div class="input-item">
-                                                    <input type="file" name="file1" class="form-control" placeholder="CIN*">
+                                                    <input type="file" name="file" class="form-control" placeholder="PRE*" >
                                                 </div>
-                                            </div>
+                                            </div><?php }else{ ?>
+                                                <?php } ?>
                                         </div><br>
                                         <h6>Address*</h6>
                                         <div class="input-item input-item-textarea ltn__custom-icon">
@@ -317,7 +313,7 @@ session_start();
                                 <h4 class="title-2">Cart Totals</h4>
                                 <?php
                                 $user = $_SESSION['Email2'];
-                                $query = "SELECT * , sum(price*qty) as sumu from medicines_order , medicines where id_user='$user' and valid='non' and  medicines.id=medicines_order.id_m and medicines_order.is_deleted='0'  ";
+                                $query = "SELECT * , sum(price*qty) as sumu from medicines_order , medicines where id_user='$user' and valid='non' and  medicines.id=medicines_order.id_m and medicines_order.is_deleted='0' and valid_user='non'  ";
                                 $rst = $con->query($query);
                                 $row1 = mysqli_fetch_array($rst);
                                 $paypal = ($row1['sumu'] + 20)/10;

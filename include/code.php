@@ -89,7 +89,7 @@ $date=date("Y/m/d h:i:s");
 
 
 
-$select ="SELECT * from medicines_order where id_m='$idm' and id_user='$user' and valid='non'";
+$select ="SELECT * from medicines_order where id_m='$idm' and id_user='$user' and valid='non' and  valid_user='non'";
 $rstselect1 = $con->query($select);
 
 if($rstselect1->num_rows >0)
@@ -285,19 +285,20 @@ if(isset($_POST['cod']))
   $user= $_POST['email'];
   $phone= $_POST['phone'];
   $address= $_POST['address'];
-  $file = $_FILES['file'];
-  $fileName = $_FILES['file']['name'];
-  $fileTmpName = $_FILES['file']['tmp_name'];
-  $fileSize = $_FILES['file']['size'];
-  $fileError = $_FILES['file']['error'];
-  $fileType = $_FILES['file']['type'];
+  @$file = $_FILES['file'];
+  @$fileName = $_FILES['file']['name'];
+  @$fileTmpName = $_FILES['file']['tmp_name'];
+  @$fileSize = $_FILES['file']['size'];
+  @$fileError = $_FILES['file']['error'];
+  @$fileType = $_FILES['file']['type'];
+  //
+  if(isset($file)){
+  
+      @$fileExt = explode( '.', $fileName);
+       @$fileActualExt = strtolower(end($fileExt));
   
   
-      $fileExt = explode( '.', $fileName);
-       $fileActualExt = strtolower(end($fileExt));
-  
-  
-  $allowed = array('png', 'jpg', 'jpeg');
+  @$allowed = array('png', 'jpg', 'jpeg');
   
   //Tu fais les vérifications nécéssaires
   if(in_array($fileActualExt, $allowed))
@@ -317,8 +318,8 @@ if(isset($_POST['cod']))
         
          $fileDestination1 = 'cp/'.$fileNameNew;
   
-  
-        $sql1 = "UPDATE medicines_order set CIN='$fileDestination1' , valid_user='oui' where id_user='$user' and valid_user='non' ";
+        
+        $sql1 = "UPDATE medicines_order set prescription ='$fileDestination1' , valid_user='oui' where id_user='$user' and valid_user='non' and is_deleted='0' ";
         $result1 =$con->query($sql1);
 
         $sql22 = "UPDATE users set address='$address' , phone='$phone' where username='$user'  ";
@@ -344,7 +345,7 @@ if(isset($_POST['cod']))
                 </script>
   ';
   
-      echo "<meta http-equiv=\"refresh\" content=\"1;URL=../medicine-list.php \">";
+      echo "<meta http-equiv=\"refresh\" content=\"1;URL=../cart.php \">";
   
    } else {
    
@@ -367,7 +368,7 @@ if(isset($_POST['cod']))
                     });
                   </script>
     ';
-    echo "<meta http-equiv=\"refresh\" content=\"1;URL=../medicine-list.php \">";
+    echo "<meta http-equiv=\"refresh\" content=\"1;URL=../cart.php \">";
   
    }
   } else {
@@ -392,7 +393,7 @@ if(isset($_POST['cod']))
                     });
                   </script>
     ';
-    echo "<meta http-equiv=\"refresh\" content=\"1;URL=../medicine-list.php \">";
+    echo "<meta http-equiv=\"refresh\" content=\"1;URL=../cart.php \">";
   }
   
   } else {
@@ -417,6 +418,34 @@ if(isset($_POST['cod']))
                     });
                   </script>
     ';
-    echo "<meta http-equiv=\"refresh\" content=\"1;URL=../medicine-list.php \">";
+    echo "<meta http-equiv=\"refresh\" content=\"1;URL=../cart.php \">";
+  }} else{
+    $sql1 = "UPDATE medicines_order set  valid_user='oui' where id_user='$user' and valid_user='non' and is_deleted='0' ";
+        $result1 =$con->query($sql1);
+
+        $sql22 = "UPDATE users set address='$address' , phone='$phone' where username='$user'  ";
+        $result22 =$con->query($sql22);
+  
+      echo  '
+  
+  
+  <script src="../Admin/assets/libs/jquery/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+         <script type="text/javascript">   
+  
+                  $(document).ready(function(){
+  
+                   
+                    
+                    swal({
+                      icon: "success",
+                      title: "Bien .",
+                      text: "Order Valid",
+                    })
+                  });
+                </script>
+  ';
+  
+      echo "<meta http-equiv=\"refresh\" content=\"1;URL=../cart.php \">";
   }
 }
