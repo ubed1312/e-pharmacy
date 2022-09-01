@@ -275,14 +275,15 @@
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="account-login-inner">
-                        <form action="include/code.php"  method="post">
+                        <form action="include/code.php"  method="post" enctype="multipart/form-data">
                             <input type="text" name="firstname" placeholder="First Name*" required>
                             <input type="text" name="lastname" placeholder="Last Name*" required>
                             <input type="email" name="email" placeholder="Email*" required>
                             <input type="password" name="password" placeholder="Password*" required>
+                            <input type="file" class="form-control" name="file" placeholder="image*" required>
                             <div class="btn-wrapper">
                                 <button class="theme-btn-1 btn reverse-color btn-block" type="submit" name="register">CREATE ACCOUNT</button>
-                            </div>
+                            </div><br>
                         </form>
                         <div class="by-agree text-center">
                             <p>By creating an account, you agree to our:</p>

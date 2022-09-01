@@ -7,7 +7,6 @@ $firstname = $_POST['firstname'];
 $lastname = $_POST['lastname'];
 $email = $_POST['email'];
 $password = $_POST['password'];
-
 // crypt pass
 $ciphering = "AES-128-CTR";
 $iv_length = openssl_cipher_iv_length($ciphering);
@@ -15,15 +14,75 @@ $options   = 0;
 $encryption_iv = '1234567891011121';
 $encryption_key = "W3docs";
 @$encryption = openssl_encrypt($password, $ciphering, $encryption_key, $options, $encryption_iv);
+// image
+$file = $_FILES['file'];
+  $fileName = $_FILES['file']['name'];
+  $fileTmpName = $_FILES['file']['tmp_name'];
+  $fileSize = $_FILES['file']['size'];
+  $fileError = $_FILES['file']['error'];
+  $fileType = $_FILES['file']['type'];
+  
+  
+      $fileExt = explode( '.', $fileName);
+       $fileActualExt = strtolower(end($fileExt));
+  
+  
+  $allowed = array('png', 'jpg', 'jpeg');
+  
+  //Tu fais les vérifications nécéssaires
+  if(in_array($fileActualExt, $allowed))
+  //Si l'extension n'est pas dans le tableau
+  {
+  if ($fileError === 0) {
+   
+   if ($fileSize < 5000000) {
+  
+  
+     $fileNameNew = uniqid('', true).".".$fileActualExt;
+     $fileDestination = '../img/CIN/'.$fileNameNew;
+     move_uploaded_file($fileTmpName , $fileDestination);
+  
+  
+  
+        
+         $fileDestination1 = 'img/CIN/'.$fileNameNew;
+  
+  
+         $select ="SELECT * from users where username='$email'";
+         $rstselect = $con->query($select);
+         
+         if ($rstselect->num_rows > 0)
+         {
+           echo  '
+         
+         
+           <script src="../Admin/assets/libs/jquery/jquery.min.js"></script>
+           <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+                  <script type="text/javascript">   
+           
+                           $(document).ready(function(){
+           
+                            
+                             
+                             swal({
+                               icon: "error",
+                               title: "Error .",
+                               text: "Used a different email",
+                             })
+                           });
+                         </script>
+           ';
+           
+               echo "<meta http-equiv=\"refresh\" content=\"1;URL=../register.php \">";
+         
+         }else{
 
-$select ="SELECT * from users where username='$email'";
-$rstselect = $con->query($select);
-
-if ($rstselect->num_rows > 0)
-{
-  echo  '
-
-
+         $sql = "INSERT into users(first_name,last_name,username,password,CIN) values('$firstname','$lastname','$email','$encryption','$fileDestination1')";
+         $result =$con->query($sql);
+  
+      echo  '
+  
+  
   <script src="../Admin/assets/libs/jquery/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
          <script type="text/javascript">   
@@ -33,49 +92,93 @@ if ($rstselect->num_rows > 0)
                    
                     
                     swal({
-                      icon: "error",
-                      title: "Error .",
-                      text: "Used a different enamel",
+                      icon: "success",
+                      title: "Bien .",
+                      text: "User Added",
                     })
                   });
                 </script>
   ';
   
-      echo "<meta http-equiv=\"refresh\" content=\"1;URL=../register.php \">";
-
-}else{
-
-$sql = "INSERT into users(first_name,last_name,username,password) values('$firstname','$lastname','$email','$encryption')";
-$result =$con->query($sql);
-
+      echo "<meta http-equiv=\"refresh\" content=\"1;URL=../login.php \">";
+  
+   }} else {
+   
     echo  '
+  
+  
+    <script src="../Admin/assets/libs/jquery/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+           <script type="text/javascript">   
+    
+                    $(document).ready(function(){
+    
+                     
+                      
+                      swal({
+                        icon: "erreur",
+                        title: "Ouups ..",
+                        text: "Grande Taille Image",
+                      })
+                    });
+                  </script>
+    ';
+    echo "<meta http-equiv=\"refresh\" content=\"1;URL=../register.php \">";
+  
+   }
+  } else {
+  
+  
+    echo  '
+  
+  
+    <script src="../Admin/assets/libs/jquery/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+           <script type="text/javascript">   
+    
+                    $(document).ready(function(){
+    
+                     
+                      
+                      swal({
+                        icon: "erreur",
+                        title: "Ouups ..",
+                        text: "Erreur de l upload Image",
+                      })
+                    });
+                  </script>
+    ';
+    echo "<meta http-equiv=\"refresh\" content=\"1;URL=../register.php \">";
+  }
+  
+  } else {
+  
+  
+    echo  '
+  
+  
+    <script src="../Admin/assets/libs/jquery/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+           <script type="text/javascript">   
+    
+                    $(document).ready(function(){
+    
+                     
+                      
+                      swal({
+                        icon: "error",
+                        title: "Ouups ..",
+                        text: "Vous ne pouvez pas uploader ce type",
+                      })
+                    });
+                  </script>
+    ';
+    echo "<meta http-equiv=\"refresh\" content=\"1;URL=../register.php \">";
+  }
 
 
-<script src="../Admin/assets/libs/jquery/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-       <script type="text/javascript">   
-
-                $(document).ready(function(){
-
-                 
-                  
-                  swal({
-                    icon: "success",
-                    title: "Good .",
-                    text: "User Added",
-                  })
-                });
-              </script>
-';
-
-    echo "<meta http-equiv=\"refresh\" content=\"1;URL=../login.php \">";
 
 
-
-
-
-
- }
 }
 
 // pass order
