@@ -213,7 +213,7 @@ if(isset($_POST["updateteam"]))
                         </div>
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Email</label>
-                            <input type="text" class="form-control" id="email" name="email" value="'.$row['email'].'" required>
+                            <input type="text" class="form-control" id="email" name="email" value="'.$row['email'].'" readonly>
                         </div>
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Password</label>

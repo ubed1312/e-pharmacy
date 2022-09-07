@@ -355,9 +355,34 @@ $encryption_iv = '1234567891011121';
 $encryption_key = "W3docs";
 @$encryption = openssl_encrypt($password, $ciphering, $encryption_key, $options, $encryption_iv);
 
-$sql5 = "INSERT into team (name,email,password,type) value('$name','$email','$encryption','$type')";
+$selecte="SELECT * from team where email='$email'";
+$rste= $con->query($selecte);
+if($rste->num_rows >0){
+  echo  '
+
+
+  <script src="../assets/libs/jquery/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+         <script type="text/javascript">   
+  
+                  $(document).ready(function(){
+  
+                   
+                    
+                    swal({
+                      icon: "error",
+                      title: "error .",
+                      text: "Already",
+                    })
+                  });
+                </script>
+  ';
+  
+      echo "<meta http-equiv=\"refresh\" content=\"1;URL=../team-list.php \">";
+
+}else{
+  $sql5 = "INSERT into team (name,email,password,type) value('$name','$email','$encryption','$type')";
 $result5 =$con->query($sql5);
-if($result5 > 0){
     echo  '
 
 
@@ -385,30 +410,7 @@ if($result5 > 0){
 
 
 
-} else {
-    echo  '
-
-
-    <script src="../assets/libs/jquery/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-           <script type="text/javascript">   
-    
-                    $(document).ready(function(){
-    
-                     
-                      
-                      swal({
-                        icon: "error",
-                        title: "Error .",
-                        text: "Error",
-                      })
-                    });
-                  </script>
-    ';
-    
-        echo "<meta http-equiv=\"refresh\" content=\"1;URL=../add-team.php \">";
-
-}}
+} }
 
 
 
@@ -429,10 +431,34 @@ $encryption_iv = '1234567891011121';
 $encryption_key = "W3docs";
 @$encryption = openssl_encrypt($password, $ciphering, $encryption_key, $options, $encryption_iv);
 
-$sql6 = "UPDATE team set name='$name' , email='$email', password='$encryption', type='$type' where id=$id ";
-$result6 =$con->query($sql6);
-if($result6 > 0){
+$selecte="SELECT * from team where email='$email'";
+$rste= $con->query($selecte);
+if($rste->num_rows >0){
+  echo  '
 
+
+  <script src="../assets/libs/jquery/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+         <script type="text/javascript">   
+  
+                  $(document).ready(function(){
+  
+                   
+                    
+                    swal({
+                      icon: "error",
+                      title: "error .",
+                      text: "Already",
+                    })
+                  });
+                </script>
+  ';
+  
+      echo "<meta http-equiv=\"refresh\" content=\"1;URL=../team-list.php \">";
+
+}else{
+  $sql6 = "UPDATE team set name='$name' , password='$encryption', type='$type' where id=$id ";
+  $result6 =$con->query($sql6);
     echo  '
 
 
@@ -459,29 +485,6 @@ if($result6 > 0){
 
 
 
-
-} else {
-    echo  '
-
-
-    <script src="../assets/libs/jquery/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-           <script type="text/javascript">   
-    
-                    $(document).ready(function(){
-    
-                     
-                      
-                      swal({
-                        icon: "error",
-                        title: "Error .",
-                        text: "Error",
-                      })
-                    });
-                  </script>
-    ';
-    
-        echo "<meta http-equiv=\"refresh\" content=\"1;URL=../team-list.php \">";
 
 }}
 
