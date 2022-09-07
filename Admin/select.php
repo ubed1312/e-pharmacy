@@ -281,4 +281,31 @@ if(isset($_POST["updatedeluser"]))
     $output .= '</table></div>';
     echo $output;
 }
+// update validation admin
+if(isset($_POST["updatedeli"]))
+{
+ $output = '';
+ $query = "SELECT * FROM medicines_order WHERE id = '".$_POST["updatedeli"]."'";
+ $result = mysqli_query($con, $query);
+ $output .= '  
+      <div class="table-responsive">  
+           <table class="table table-bordered">';
+    while($row = mysqli_fetch_array($result))
+    {
+     $output .= '
+     <tr>  
+     <input type="hidden" name="id" id="id" value="'.$row['id'].'"/> 
+     <input type="hidden" name="email" id="email" value="'.$row['id_user'].'"/> 
+     <label for="recipient-name" class="col-form-label">Type:</label>
+     <select class="form-select" aria-label="Default select example" name="type" id="type"   required>
+         <option selected style="display: none;" value="'.$row['valid'].'">'.$row['valid'].'</option>
+         <option value="Yes">Yes</option>
+         <option value="No">No</option>
+     </select>
+        </tr>
+     ';
+    }
+    $output .= '</table></div>';
+    echo $output;
+}
 ?>

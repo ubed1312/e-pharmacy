@@ -291,7 +291,7 @@ session_start();
                                         </div>
                                     </div>
                                     <!-- card -->
-                                    <div class="card">
+                                    <!-- <div class="card">
                                         <h5 class="collapsed ltn__card-title" data-bs-toggle="collapse" data-bs-target="#faq-item-2-3" aria-expanded="false">
                                             PayPal <img src="img/icons/payment-3.png" alt="#">
                                         </h5>
@@ -300,7 +300,7 @@ session_start();
                                                 <p>Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account.</p>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <div class="ltn__payment-note mt-30 mb-30">
                                     <p>Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.</p>
@@ -340,11 +340,11 @@ session_start();
                                     <div class="btn-wrapper text-right">
                                         <button type="submit" name="cod" class="hy theme-btn-1 btn btn-effect-1">COD</button>
                                     </div><br>
-                                    <div id="smart-button-container">
+                                    <!-- <div id="smart-button-container">
                                         <div style="text-align: center;">
                                             <div id="paypal-button-container"></div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 <?php } ?>
 
                             </div>

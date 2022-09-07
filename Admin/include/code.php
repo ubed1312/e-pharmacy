@@ -749,3 +749,64 @@ if(isset($_POST['updateimagemedicine']))
     echo "<meta http-equiv=\"refresh\" content=\"1;URL=../medicine-list.php \">";
   }
 }
+
+// update validation admin
+if(isset($_POST['updatevalidationadmin']))  
+{
+$id = $_POST['id'];
+$email = $_POST['email'];
+
+$sql10 = "UPDATE medicines_order set valid='Yes' where id=$id ";
+$result10 =$con->query($sql10);
+if($result10 > 0){
+    echo  '
+
+
+<script src="../assets/libs/jquery/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+       <script type="text/javascript">   
+
+                $(document).ready(function(){
+
+                 
+                  
+                  swal({
+                    icon: "success",
+                    title: "Good .",
+                    text: "Validation Updated",
+                  })
+                });
+              </script>
+';
+
+    echo "<meta http-equiv=\"refresh\" content=\"1;URL=../orders_details.php?id=$email \">";
+
+
+
+
+
+
+} else {
+    echo  '
+
+
+    <script src="../assets/libs/jquery/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+           <script type="text/javascript">   
+    
+                    $(document).ready(function(){
+    
+                     
+                      
+                      swal({
+                        icon: "error",
+                        title: "Error .",
+                        text: "Error",
+                      })
+                    });
+                  </script>
+    ';
+    
+        echo "<meta http-equiv=\"refresh\" content=\"1;URL=../orders_details.php?id=$email \">";
+
+}}
