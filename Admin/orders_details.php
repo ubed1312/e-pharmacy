@@ -110,12 +110,14 @@ include_once('include/db.php'); ?>
 
                                                 <td>
                                                     <a href="details.php?id=<?php echo $row['da']; ?>" class="px-3 text-success passingID" data-id="<?php echo $row['da'] ?>" data-name="<?php echo $row['name'] ?>" data-qty="<?php echo $row['qty'] ?>" data-price="<?php echo $row['price'] ?>" data-image="<?php echo $row['image'] ?>"><i class="uil uil-eye font-size-18"></i></a>
-                                                    <?php 
-                                                    if($row['valid']==='Yes'){
-                                                    ?>
-                                                    <?php }else{ ?>
-                                                    <a class="px-3 text-warning update" data-id="<?php echo $row['da'] ?>"  ><i class="uil uil-edit font-size-18"></i></a>
-                                                    <?php } ?>
+                                                    <?php if ($row['valid'] === 'No') { ?>
+                                                    <a class="px-3 text-warning update" data-id="<?php echo $row['da'] ?>"  ><i class="uil uil-edit font-size-18"></i>Update order</a>
+                                                    <?php } else {} ?>
+                                                    <?php if ($row['delivery'] === 'Not yet') { ?>
+                                                    <a class="px-3 text-info updatedelivery" data-id="<?php echo $row['da'] ?>"  ><i class="uil uil-edit font-size-18"></i>Update Delivery</a>
+                                                    <?php } else {} ?>
+                                                
+                                                    
 
                                                 </td>
                                             </tr>
@@ -167,6 +169,32 @@ include_once('include/db.php'); ?>
     </div><!-- /.modal -->
     <!-- end modal -->
 
+      <!-- update delivery modal -->
+    <!-- Scrollable modal example-->
+    <div class="modal fade" id="editdeli" tabindex="-1" role="dialog" aria-labelledby="editdeli" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editdeli">Update Delivery</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="include/code.php" method="post">
+                        <div class="modal-body" id="employee_detaill">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-success" name="updatevalidationadmin">Update</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- end modal -->
+
     <!-- Center Modal example -->
     <!-- <div class="modal fade bs-example-modal-center" tabindex="-1" id="myModal" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -191,33 +219,7 @@ include_once('include/db.php'); ?>
         </div>
     </div> -->
 
- <!-- update modal -->
-    <!-- Scrollable modal example-->
-    <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="update" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="edit">Update</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                    </button>
-                </div>
-                <div class="modal-body" >
-                    <form action="include/code.php" method="post" >
-                    <input type="text" class="form-control" id="idd" name="idd" required>
-                    <input type="text" class="form-control" id="email" name="email" required>
-                       <div class="modal-body" id="employee_detail">
-                                    </div>
-                        <div class="modal-footer">
-                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-success" name="updatedeluser">Update</button>
-                </div>
-                    </form>
-                </div>
-               
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-    <!-- end modal -->
+
 
     <!-- Right bar overlay-->
     <div class="rightbar-overlay"></div>
@@ -245,6 +247,7 @@ include_once('include/db.php'); ?>
         });
     });
 </script>
+
 <!-- <script>
     $(".passingID").click(function() {
         var ids = $(this).attr('data-id');
@@ -271,6 +274,21 @@ include_once('include/db.php'); ?>
    success:function(data){
     $('#employee_detail').html(data);
     $('#edit').modal('show');
+   }
+  });
+ });
+</script>
+<script>
+     $(document).on('click', '.updatedelivery', function(){
+  //$('#dataModal').modal();
+  var updatedelivery = $(this).attr("data-id");
+  $.ajax({
+   url:"select.php",
+   method:"POST",
+   data:{updatedelivery:updatedelivery},
+   success:function(data){
+    $('#employee_detaill').html(data);
+    $('#editdeli').modal('show');
    }
   });
  });

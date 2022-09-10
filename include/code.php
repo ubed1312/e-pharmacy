@@ -217,7 +217,7 @@ if($rstselect1->num_rows >0)
                 </script>
   ';
   
-      echo "<meta http-equiv=\"refresh\" content=\"1;URL=../cart.php \">";
+      echo "<meta http-equiv=\"refresh\" content=\"1;URL=../index.php \">";
 
 }else{
 

@@ -25,7 +25,7 @@ if($rstselect->num_rows > 0)
 
   $_SESSION['Email2']=$email;
   
-      echo "<meta http-equiv=\"refresh\" content=\"0;URL=../cart.php \">";
+      echo "<meta http-equiv=\"refresh\" content=\"0;URL=../index.php \">";
 
 }else{
 

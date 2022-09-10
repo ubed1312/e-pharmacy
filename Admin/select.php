@@ -308,4 +308,31 @@ if(isset($_POST["updatedeli"]))
     $output .= '</table></div>';
     echo $output;
 }
+// update delivery admin
+if(isset($_POST["updatedelivery"]))
+{
+ $output = '';
+ $query = "SELECT * FROM medicines_order WHERE id = '".$_POST["updatedelivery"]."'";
+ $result = mysqli_query($con, $query);
+ $output .= '  
+      <div class="table-responsive">  
+           <table class="table table-bordered">';
+    while($row = mysqli_fetch_array($result))
+    {
+     $output .= '
+     <tr>  
+     <input type="hidden" name="id" id="id" value="'.$row['id'].'"/> 
+     <input type="hidden" name="email" id="email" value="'.$row['id_user'].'"/> 
+     <label for="recipient-name" class="col-form-label">Type:</label>
+     <select class="form-select" aria-label="Default select example" name="type" id="type"   required>
+         <option selected style="display: none;" value="'.$row['delivery'].'">'.$row['delivery'].'</option>
+         <option value="Delivery Done">Delivery Done</option>
+         <option value="Not Yet">Not Yet</option>
+     </select>
+        </tr>
+     ';
+    }
+    $output .= '</table></div>';
+    echo $output;
+}
 ?>

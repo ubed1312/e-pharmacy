@@ -114,7 +114,7 @@ if (!isset($_SESSION['Email1'])) {
                                 <li><a href="wishlist.html">Wishlist</a></li>
                                 <li><a href="checkout.html">Checkout</a></li>
                                 <li><a href="order-tracking.html">Order Tracking</a></li>
-                                <li><a href="account.html">My Account</a></li>
+                                <li><a href="account.php">My Account</a></li>
                                 <li><a href="login.html">Sign in</a></li>
                                 <li><a href="register.html">Register</a></li>
                             </ul>
@@ -153,7 +153,7 @@ if (!isset($_SESSION['Email1'])) {
                 <div class="ltn__utilize-buttons ltn__utilize-buttons-2">
                     <ul>
                         <li>
-                            <a href="account.html" title="My Account">
+                            <a href="account.php" title="My Account">
                                 <span class="utilize-btn-icon">
                                     <i class="far fa-user"></i>
                                 </span>
@@ -235,7 +235,7 @@ if (!isset($_SESSION['Email1'])) {
                                         include('Admin/include/db.php');
                                         $date = date("Y-m-d");
                                         $user = $_SESSION['Email2'];
-                                        $para = "SELECT medicines.id as idd , medicines.* , medicines_order.* from medicines_order , medicines where id_user='$user' and valid='non' and medicines.id=medicines_order.id_m and medicines_order.is_deleted='0' ";
+                                        $para = "SELECT medicines.id as idd , medicines.* , medicines_order.* from medicines_order , medicines where id_user='$user' and delivery='Not Yet' and medicines.id=medicines_order.id_m and medicines_order.is_deleted='0' ";
                                         $rstpara = $con->query($para);
                                         while ($row = $rstpara->fetch_assoc()) {
                                         ?>
@@ -251,10 +251,12 @@ if (!isset($_SESSION['Email1'])) {
                                                 <td width="16%"><?php echo ($row['qty'] * $row['price']) ?> DHS</td>
                                                 <?php if($row['valid_user'] === 'non'){ ?>
                                                 <td width="16%"> <a class="passingID" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="<?php echo $row['idd'] ?>" data-qty="<?php echo $row['qty'] ?>"><i class="icon-edit" style="color:green;"> Update</i></a>
-                                                    <a class="deleteID" data-bs-toggle="modal" data-bs-target="#delete" data-id="<?php echo $row['id'] ?>"><i class="icon-info" style="color:red;">X Delete</i></a>
-                                                </td><?php } else{ ?>
+                                                    <a class="deleteID" data-bs-toggle="modal" data-bs-target="#delete" data-id="<?php echo $row['id'] ?>"><i class="fa fa-trash" style="color:red;"> Delete</i></a>
+                                                </td><?php } else if ($row['valid'] === 'No'){ ?>
                                                    <td><p style="color:green;">Order being checked</p></td> 
-                                                    <?php } ?>
+                                                    <?php }else{ ?>
+                                                        <td><p style="color:green;">Order in the process of delivery</p></td>
+                                                        <?php } ?>
                                             </tr>
                                         <?php } ?>
                                     </tbody>
@@ -437,7 +439,7 @@ if (!isset($_SESSION['Email1'])) {
                                         <li><a href="order-tracking.html">Order tracking</a></li>
                                         <li><a href="wishlist.html">Wish List</a></li>
                                         <li><a href="login.html">Login</a></li>
-                                        <li><a href="account.html">My account</a></li>
+                                        <li><a href="account.php">My account</a></li>
                                         <li><a href="about.html">Terms & Conditions</a></li>
                                         <li><a href="about.html">Promotional Offers</a></li>
                                     </ul>
@@ -450,7 +452,7 @@ if (!isset($_SESSION['Email1'])) {
                                 <div class="footer-menu">
                                     <ul>
                                         <li><a href="login.html">Login</a></li>
-                                        <li><a href="account.html">My account</a></li>
+                                        <li><a href="account.php">My account</a></li>
                                         <li><a href="wishlist.html">Wish List</a></li>
                                         <li><a href="order-tracking.html">Order tracking</a></li>
                                         <li><a href="faq.html">FAQ</a></li>
