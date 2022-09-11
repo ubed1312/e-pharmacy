@@ -185,11 +185,11 @@ session_start();
                         <div class="ltn__category-menu-toggle ltn__one-line-active">
                             <ul>
                                 <!-- Submenu -->
-                                <li class="ltn__category-menu-item ltn__category-menu-drop">
+                                <li >
                                     <a href="shop-pharmacy.php"><i class="icon-shopping-cart"></i>Pharmacy</a>
                                 </li>
                                 <!-- Submenu -->
-                                <li class="ltn__category-menu-item ltn__category-menu-drop">
+                                <li >
                                     <a href="shop-parapharmacy.php"><i class="icon-shopping-bags"></i>Parapharmacy </a>
                                 </li>
                                 <!-- Single menu end -->
