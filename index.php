@@ -373,7 +373,7 @@ session_start();
                                     ?>
                                         <div class="ltn__product-item ltn__product-item-3 text-center">
                                             <div class="product-img">
-                                                <a href="product-details.html"><img src="Admin/<?php echo $rowpara['image'] ?>" width="200" height="auto" alt="#"></a>
+                                                <a href="product-page.php?id=<?php echo $rowpara['id'] ?>"><img src="Admin/<?php echo $rowpara['image'] ?>" width="200" height="auto" alt="#"></a>
                                                 <div class="product-badge">
                                                 </div>
                                                 <!-- <div class="product-hover-action">
@@ -396,7 +396,7 @@ session_start();
                                                 </div> -->
                                             </div>
                                             <div class="product-info">
-                                                <div class="product-ratting">
+                                                <!-- <div class="product-ratting">
                                                     <ul>
                                                         <li><a href="#"><i class="fas fa-star"></i></a></li>
                                                         <li><a href="#"><i class="fas fa-star"></i></a></li>
@@ -405,8 +405,8 @@ session_start();
                                                         <li><a href="#"><i class="far fa-star"></i></a></li>
                                                         <li class="review-total"> <a href="#"> (29)</a></li>
                                                     </ul>
-                                                </div>
-                                                <h2 class="product-title"><a href="product-details.html"><?php echo $rowpara['name']; ?></a></h2>
+                                                </div> -->
+                                                <h2 class="product-title"><a href="product-page.php?id=<?php echo $rowpara['id'] ?>"><?php echo $rowpara['name']; ?></a></h2>
                                                 <div class="product-price">
                                                     <span><?php echo $rowpara['price'] ?> DHS</span>
                                                 </div>
