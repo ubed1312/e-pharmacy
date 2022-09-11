@@ -235,7 +235,7 @@ if (!isset($_SESSION['Email1'])) {
                                         include('Admin/include/db.php');
                                         $date = date("Y-m-d");
                                         $user = $_SESSION['Email2'];
-                                        $para = "SELECT medicines.id as idd , medicines.* , medicines_order.* from medicines_order , medicines where id_user='$user' and delivery='Not Yet' and medicines.id=medicines_order.id_m and medicines_order.is_deleted='0' ";
+                                        $para = "SELECT medicines.id as idd , medicines.* , medicines_order.* from medicines_order , medicines where id_user='$user' and delivery='Not yet' and medicines.id=medicines_order.id_m and medicines_order.is_deleted='0' ";
                                         $rstpara = $con->query($para);
                                         while ($row = $rstpara->fetch_assoc()) {
                                         ?>
@@ -264,7 +264,7 @@ if (!isset($_SESSION['Email1'])) {
                             </div>
                             <?php
                             $user = $_SESSION['Email2'];
-                            $query = "SELECT * , sum(price*qty) as sumu from medicines_order , medicines where id_user='$user' and valid='non' and  medicines.id=medicines_order.id_m and medicines_order.is_deleted='0' and valid_user='non'  ";
+                            $query = "SELECT * , sum(price*qty) as sumu from medicines_order , medicines where id_user='$user' and valid='No' and  medicines.id=medicines_order.id_m and medicines_order.is_deleted='0' and valid_user='non'  ";
                             $rst = $con->query($query);
                             $row1 = mysqli_fetch_array($rst);
                             ?>

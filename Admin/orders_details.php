@@ -61,7 +61,7 @@ include_once('include/db.php'); ?>
                                             <th>Medicine</th>
                                             <th>Quantity</th>
                                             <th>Price</th>
-                                            <th>Total</th>
+                                            <th>Prescription</th>
                                             <th>Valid Order</th>
                                             <th>Delivery Status</th>
                                             <th style="width: 120px;">Action</th>
@@ -85,9 +85,15 @@ include_once('include/db.php'); ?>
                                                 <td>
                                                     <?php echo $row['price'] ?> DHS
                                                 </td>
-                                                <td>
-                                                    <?php echo ($row['price'] * $row['qty']) ?> DHS
-                                                </td>
+                                                <?php if (empty($row['prescription'])) { ?>
+                                                    <td>
+                                                        <div class="badge bg-pill bg-soft-danger font-size-12">No</div>
+                                                    </td>
+                                                <?php } else { ?>
+                                                    <td>
+                                                        <div class="badge bg-pill bg-soft-success font-size-12">Yes</div>
+                                                    </td>
+                                                <?php } ?>
                                                 <?php if ($row['valid'] === 'No') { ?>
                                                     <td>
                                                         <div class="badge bg-pill bg-soft-danger font-size-12">No</div>
@@ -185,7 +191,7 @@ include_once('include/db.php'); ?>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-success" name="updatevalidationadmin">Update</button>
+                            <button type="submit" class="btn btn-success" name="updatedela">Update</button>
                         </div>
                     </form>
                 </div>

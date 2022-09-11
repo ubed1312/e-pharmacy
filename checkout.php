@@ -313,7 +313,7 @@ session_start();
                                 <h4 class="title-2">Cart Totals</h4>
                                 <?php
                                 $user = $_SESSION['Email2'];
-                                $query = "SELECT * , sum(price*qty) as sumu from medicines_order , medicines where id_user='$user' and valid='non' and  medicines.id=medicines_order.id_m and medicines_order.is_deleted='0' and valid_user='non'  ";
+                                $query = "SELECT * , sum(price*qty) as sumu from medicines_order , medicines where id_user='$user' and valid='No' and  medicines.id=medicines_order.id_m and medicines_order.is_deleted='0' and valid_user='non'  ";
                                 $rst = $con->query($query);
                                 $row1 = mysqli_fetch_array($rst);
                                 $paypal = ($row1['sumu'] + 20)/10;

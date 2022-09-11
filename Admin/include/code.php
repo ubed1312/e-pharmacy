@@ -814,7 +814,7 @@ if($result10 > 0){
 
 }}
 // update delivery admin
-if(isset($_POST['updatevalidationadmin']))  
+if(isset($_POST['updatedela']))  
 {
 $id = $_POST['id'];
 $email = $_POST['email'];
