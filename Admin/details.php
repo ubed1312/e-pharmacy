@@ -675,12 +675,19 @@
                                                 <input class="form-control" type="text"  id="example-text-input" value="<?php echo $row['delivery']; ?>" disabled>
                                             </div>
                                         </div>
-                                        <div class="mb-3 row">
+                                        <?php 
+                                        if(!empty($row['prescription'])){
+                                            ?>
+                                            <div class="mb-3 row">
                                             <label for="example-text-input" class="col-md-2 col-form-label">Prescription</label>
                                             <div class="col-md-10">
                                             <img src="<?php echo $row['prescription']; ?>" class="img-fluid" alt="" width="500px">
                                             </div>
                                         </div>
+                                            <?php
+                                        }else{
+                                        ?> <?php } ?>
+                                        
                                         <br>
                                       <a href="orders_details.php?id=<?php echo $row['id_user']; ?>"><button type="button" class="btn btn-info">Return</button></a>  
                                     </div>
