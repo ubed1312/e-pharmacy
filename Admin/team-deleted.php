@@ -1,3 +1,17 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['Email1'])) {
+    include('include/db.php');
+
+    //Redirect the instructor to login page if he/she is not logged in.
+    echo "
+        <script type='text/javascript'>
+          window.location.href ='login.php';
+        </script>
+      ";
+}
+?>
 <!doctype html>
 <html lang="en">
 

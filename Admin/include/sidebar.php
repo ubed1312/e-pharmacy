@@ -65,11 +65,11 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="uil-store"></i>
-                        <span>Team</span>
+                        <span>Check Orders</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="orders.php">Orders </a></li>
-                        <li><a href="team-deleted.php">Team Deleted</a></li>
+                        <!-- <li><a href="team-deleted.php">Team Deleted</a></li> -->
                     </ul>
                 </li>
 
