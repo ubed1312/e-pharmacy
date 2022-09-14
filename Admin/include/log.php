@@ -14,7 +14,7 @@ $encryption_iv = '1234567891011121';
 $encryption_key = "W3docs";
 @$encryption = openssl_encrypt($password, $ciphering, $encryption_key, $options, $encryption_iv);
 
-$select ="SELECT * from users where username='$email' and password='$encryption'";
+$select ="SELECT * from team where email='$email' and password='$encryption'";
 $rstselect = $con->query($select);
 
 if($rstselect->num_rows > 0)

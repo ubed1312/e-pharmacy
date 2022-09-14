@@ -1,3 +1,4 @@
+
 <div class="vertical-menu">
 
     <!-- LOGO -->
@@ -35,7 +36,7 @@
 
                 <li>
                     <a href="index.php">
-                        <i class="uil-home-alt"></i><span class="badge rounded-pill bg-primary float-end">01</span>
+                        <i class="uil-home-alt"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
@@ -52,6 +53,9 @@
                         <li><a href="medicine-stockout.php">Medicine Stock Out </a></li>
                     </ul>
                 </li>
+              <?php 
+              if($_SESSION['Email2'] === 'ibra@gmail.com'){
+              ?>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="uil-user-circle"></i>
@@ -62,6 +66,7 @@
                         <li><a href="team-deleted.php">Team Deleted</a></li>
                     </ul>
                 </li>
+<?php } ?>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="uil-store"></i>

@@ -68,7 +68,7 @@ include_once('include/db.php');?>
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Password</th>
-                                            <th>Type</th>
+                                            
                                             <th>Status</th>
                                             <th style="width: 120px;">Action</th>
                                         </tr>
@@ -93,9 +93,7 @@ include_once('include/db.php');?>
                                             </td>
                                             <td><?php echo $decryption ?></td>
 
-                                            <td>
-                                            <?php echo $row['type'] ?> DHS
-                                            </td>
+                                          
                                             <?php if($row['is_deleted']='Not Available'){ ?>
                                             <td>
                                             <div class="badge bg-pill bg-soft-danger font-size-12">Not Available</div>

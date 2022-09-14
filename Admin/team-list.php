@@ -71,13 +71,14 @@ include_once('include/db.php'); ?>
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Password</th>
-                                            <th>Type</th>
+                                       
                                             <th style="width: 120px;">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $sql = "SELECT * from team where is_deleted='Available'";
+                                        $email = $_SESSION["Email2"];
+                                        $sql = "SELECT * from team where is_deleted='Available' and email!='$email'";
                                         $result = $con->query($sql);
 
                                         $ciphering = "AES-128-CTR";
@@ -96,9 +97,7 @@ include_once('include/db.php'); ?>
                                                 </td>
                                                 <td><?php echo $decryption ?></td>
 
-                                                <td>
-                                                    <?php echo $row['type'] ?>
-                                                </td>
+                                           
                                                 <td>
                                                     <a href="javascript:void(0);" class="px-3 text-primary update_data" id="<?php echo $row["id"]; ?>"><i class="uil uil-pen font-size-18"></i></a>
                                                     <a href="javascript:void(0);" class="px-3 text-danger delete_data" id="<?php echo $row["id"]; ?>"><i class="uil uil-trash-alt font-size-18"></i></a>
@@ -147,13 +146,6 @@ include_once('include/db.php'); ?>
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Password:</label>
                             <input type="password" class="form-control" id="password" name="password" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">Type:</label>
-                            <select class="form-select" aria-label="Default select example" name="type" id="type" required>
-                                <option value="Admin">Admin</option>
-                                <option value="Staff">Staff</option>
-                            </select>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>

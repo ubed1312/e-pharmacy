@@ -346,7 +346,7 @@ if(isset($_POST['addteam']))
 $name = $_POST['name'];
 $email = $_POST['email'];
 $password = $_POST['password'];
-$type = $_POST['type'];
+
 // crypt pass
 $ciphering = "AES-128-CTR";
 $iv_length = openssl_cipher_iv_length($ciphering);
@@ -381,7 +381,7 @@ if($rste->num_rows >0){
       echo "<meta http-equiv=\"refresh\" content=\"1;URL=../team-list.php \">";
 
 }else{
-  $sql5 = "INSERT into team (name,email,password,type) value('$name','$email','$encryption','$type')";
+  $sql5 = "INSERT into team (name,email,password) value('$name','$email','$encryption')";
 $result5 =$con->query($sql5);
     echo  '
 
