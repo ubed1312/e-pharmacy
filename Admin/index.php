@@ -111,7 +111,11 @@ if (!isset($_SESSION['Email1'])) {
                                 </div>
                             </div>
                         </div> <!-- end col-->
-
+                        <?php
+                        $query4 = "SELECT count(id) as med  from  medicines where is_deleted='Available' ";
+                        $rst4 = $con->query($query4);
+                        $row4 = mysqli_fetch_array($rst4);
+                        ?>
                         <div class="col-md-6 col-xl-3">
 
                             <div class="card">
@@ -120,8 +124,8 @@ if (!isset($_SESSION['Email1'])) {
                                         <div id="growth-chart"></div>
                                     </div>
                                     <div>
-                                        <h4 class="mb-1 mt-1">+ <span data-plugin="counterup">12.58</span>%</h4>
-                                        <p class="text-muted mb-0">Growth</p>
+                                        <h4 class="mb-1 mt-1"><span data-plugin="counterup"><?php echo $row4['med'] ?></span></h4>
+                                        <p class="text-muted mb-0">Medicines</p>
                                     </div>
 
                                 </div>

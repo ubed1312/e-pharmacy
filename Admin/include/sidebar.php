@@ -77,7 +77,15 @@
                         <!-- <li><a href="team-deleted.php">Team Deleted</a></li> -->
                     </ul>
                 </li>
-
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="uil-users-alt"></i>
+                        <span>Users</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="users.php">All users</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
         <!-- Sidebar -->

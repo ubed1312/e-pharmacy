@@ -219,14 +219,6 @@ if(isset($_POST["updateteam"]))
                             <label for="recipient-name" class="col-form-label">Password</label>
                             <input type="text" class="form-control" id="password" name="password" value="'.$decryption.'" required>
                         </div>
-                        <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">Type:</label>
-                            <select class="form-select" aria-label="Default select example" name="type" id="type"   required>
-                                <option selected style="display: none;" value="'.$row['type'].'">'.$row['type'].'</option>
-                                <option value="Admin">Admin</option>
-                                <option value="Staff">Staff</option>
-                            </select>
-                        </div>
                        
                   
      ';
@@ -330,6 +322,27 @@ if(isset($_POST["updatedelivery"]))
          <option value="Not Yet">Not Yet</option>
      </select>
         </tr>
+     ';
+    }
+    $output .= '</table></div>';
+    echo $output;
+}
+// select
+if(isset($_POST["selectusers"]))
+{
+ $output = '';
+ $query = "SELECT * FROM users WHERE id = '".$_POST["selectusers"]."'";
+ $result = mysqli_query($con, $query);
+ $output .= '  
+      <div class="table-responsive">  
+           <table class="table table-bordered">';
+    while($row = mysqli_fetch_array($result))
+    {
+     $output .= '
+     <tr>  
+   
+     <td width="100%"><img src="../'.$row['CIN'].'" class="rounded mx-auto d-block" width="200" height="auto"></td>  
+ </tr>
      ';
     }
     $output .= '</table></div>';
