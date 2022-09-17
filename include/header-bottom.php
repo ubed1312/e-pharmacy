@@ -4,7 +4,7 @@
                     <div class="col header-menu-column justify-content-center">
                         <div class="sticky-logo">
                             <div class="site-logo">
-                                <a href="index.html"><img src="img/logo-3.png" alt="Logo"></a>
+                                <a href="index.php"><img src="img/logo-3.png" alt="Logo"></a>
                             </div>
                         </div>
                         <div class="header-menu header-menu-2">

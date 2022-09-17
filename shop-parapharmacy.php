@@ -242,14 +242,14 @@ if (isset($_GET['page']) && !empty($_GET['page'])) {
     $currentPage = 1;
 }
 $startFrom = ($currentPage * $showRecordPerPage) - $showRecordPerPage;
-$totalEmpSQL = "SELECT * from medicines where type='Parapharmacy' and is_deleted='Available' and expiry_date > '$date'   ";
+$totalEmpSQL = "SELECT * from medicines where type='Parapharmacy' and is_deleted='Available' and stock!=0 and expiry_date > '$date'   ";
 $allEmpResult = mysqli_query($con, $totalEmpSQL);
 $totalEmployee = mysqli_num_rows($allEmpResult);
 $lastPage = ceil($totalEmployee / $showRecordPerPage);
 $firstPage = 1;
 $nextPage = $currentPage + 1;
 $previousPage = $currentPage - 1;
-$empSQL = "SELECT * from medicines where type='Parapharmacy' and is_deleted='Available' and expiry_date > '$date'   LIMIT $startFrom, $showRecordPerPage ";
+$empSQL = "SELECT * from medicines where type='Parapharmacy' and is_deleted='Available' and stock!=0 and expiry_date > '$date'   LIMIT $startFrom, $showRecordPerPage ";
 $empResult = mysqli_query($con, $empSQL);
 ?>
 
