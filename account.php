@@ -173,11 +173,11 @@ session_start();
             <div class="row">
                 <div class="col-lg-12">
                     <div class="ltn__breadcrumb-inner">
-                        <h1 class="page-title">Shop Pharmacy</h1>
+                        <h1 class="page-title">Account</h1>
                         <div class="ltn__breadcrumb-list">
                             <ul>
                                 <li><a href="index.html"><span class="ltn__secondary-color"><i class="fas fa-home"></i></span> Home</a></li>
-                                <li>Shop Pharmacy</li>
+                                <li>Profile</li>
                             </ul>
                         </div>
                     </div>
@@ -186,8 +186,75 @@ session_start();
         </div>
     </div>
     <!-- BREADCRUMB AREA END -->
-    
-    
+    <?php
+                        include('include/db.php');
+                        $user = $_SESSION['Email2'];
+                         $slct = "SELECT * from users where username='$user'";
+                         $rst = $con->query($slct);
+                         $row = mysqli_fetch_array($rst);
+                        ?>
+    <div >
+    <h1 class="text-center">  Profile Settings </h1>
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+        
+                                    <div class="row">
+        <div class="col-md-3 border-right">
+        
+        </div>
+        <div class="col-md-5 border-right">
+            <div class="p-3 py-5">
+                
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input" class="col-md-2 col-form-label">First name</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" type="text" value="<?php echo $row['first_name'] ?>" >
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input" class="col-md-2 col-form-label">Last name</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" type="text" value="<?php echo $row['last_name'] ?>" id="example-text-input" >
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input" class="col-md-2 col-form-label">Address</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" type="text" value="<?php echo $row['address'] ?>" id="example-text-input" >
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input" class="col-md-2 col-form-label">Phone</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" type="text" value="<?php echo $row['phone'] ?>" id="example-text-input" >
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input" class="col-md-2 col-form-label">CIN</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" type="text" value="<?php echo $row['phone'] ?>" id="example-text-input" disabled >
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input" class="col-md-2 col-form-label">Email</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" type="text" value="<?php echo $row['username'] ?>" id="example-text-input" >
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input" class="col-md-2 col-form-label">Password</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" type="text" value="<?php echo $row['password'] ?>" id="example-text-input" >
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
+                                    </div>
+                                </div></div></div>
+                            </div> <!-- end col -->
+
+                        </h1>
                     
                 </div>
             </div>

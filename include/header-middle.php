@@ -78,6 +78,7 @@
                                     <li>
                                         <?php
                                         include('db.php');
+                                        include('log.php');
                                         
                                         if (isset($_SESSION['Email2'])) {
                                             $user = $_SESSION['Email2'];

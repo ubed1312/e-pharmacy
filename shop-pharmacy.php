@@ -217,7 +217,7 @@ session_start();
                             <?php 
                              include('Admin/include/db.php');
                                     $date = date("Y-m-d");
-                                    $para = "SELECT count(id) as countm from medicines where type='Parapharmacy' and is_deleted='Available' and expiry_date > '$date' ";
+                                    $para = "SELECT count(id) as countm from medicines where type='pharmacy' and is_deleted='Available' and expiry_date > '$date' ";
                                     $rstparac = $con->query($para);
                                     $countm = mysqli_fetch_assoc($rstparac);
                                     ?>
@@ -227,6 +227,8 @@ session_start();
                             </li>
                         </ul>
                     </div>
+
+
                     <div class="tab-content">
                         <div class="tab-pane fade active show" id="liton_product_grid">
                             <div class="ltn__product-tab-content-inner ltn__product-grid-view">
@@ -314,7 +316,7 @@ while ($rowpha = mysqli_fetch_assoc($empResult)) {
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div..>
             </div>
         </div>
     </div>

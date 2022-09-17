@@ -330,8 +330,15 @@ input[type=number]
                                         <ul>
                                             <li>
                                                 <div class="btn btn-effect-1 quantity">
-                                                    <input type="number" class="form-control" value="1" min="1" max="5" name="qty" required>
-                                                    
+                                                <?php
+                                                if($row['stock'] >= 5)
+                                                { ?>
+                                                   <input type="number" class="form-control" value="1" min="1" max="5" name="qty" required>
+                                                    <?php }else{
+                                                ?>
+                                                    <input type="number" class="form-control" value="1" min="1" max="<?php echo $row['stock'] ?>" name="qty" required>
+                                                    <?php }
+                                                ?>
                                                 </div>
                                                 <input type="hidden" class="form-control" value="<?php echo $row['id'] ?>" name="idm">
                                                 <?php

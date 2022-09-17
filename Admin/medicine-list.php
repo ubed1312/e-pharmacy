@@ -62,7 +62,7 @@ include_once('include/db.php');?>
                         <div class="col-lg-12">
                             <div>
 
-                                <button type="button" class="btn btn-success waves-effect waves-light mb-3" data-bs-toggle="modal" data-bs-target="#exampleModalScrollable"><i class="mdi mdi-plus me-1"></i> Add New Order</button>
+                                <button type="button" class="btn btn-success waves-effect waves-light mb-3" data-bs-toggle="modal" data-bs-target="#exampleModalScrollable"><i class="mdi mdi-plus me-1"></i> Add New Medicine</button>
                             </div>
                             <div class="table-responsive mb-4">
                                 <table class="table table-centered datatable dt-responsive nowrap table-card-list" style="border-collapse: collapse; border-spacing: 0 12px; width: 100%;">
