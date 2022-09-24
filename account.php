@@ -233,7 +233,7 @@ session_start();
                                         <div class="mb-3 row">
                                             <label for="example-text-input" class="col-md-2 col-form-label">CIN</label>
                                             <div class="col-md-10">
-                                                <input class="form-control" type="text" value="<?php echo $row['phone'] ?>" id="example-text-input" disabled >
+                                                <input class="form-control" type="image" value="<?php echo $row['CIN'] ?>" id="example-text-input" disabled >
                                             </div>
                                         </div>
                                         <div class="mb-3 row">

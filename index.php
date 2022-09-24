@@ -337,7 +337,7 @@ session_start();
                                     <?php 
                                     include('Admin/include/db.php');
                                     $date = date("Y-m-d");
-                                    $para = "SELECT * from medicines where type='Parapharmacy' and is_deleted='Available' and expiry_date > '$date'  limit 6 ";
+                                    $para = "SELECT * from medicines where type='Parapharmacy' and stock!=0 and is_deleted='Available' and expiry_date > '$date'  limit 6 ";
                                     $rstpara = $con->query($para);
                                     while ($rowpara = $rstpara->fetch_assoc()){
                                     ?>

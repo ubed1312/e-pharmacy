@@ -191,7 +191,10 @@ session_start();
     <div class="ltn__product-area ltn__product-gutter mb-120">
         <div class="container">
             <div class="row">
-                
+            <div>
+            <h1 class="text-center"> Pharmacy Type</h1>
+</div>   <br><br><br><br>
+
 
             <style>
                 form{ direction: rtl;}
@@ -230,6 +233,7 @@ session_start();
                                     </select>
                                 </div> 
                             </li> -->
+
                             <li>
                             <?php 
                              include('Admin/include/db.php');

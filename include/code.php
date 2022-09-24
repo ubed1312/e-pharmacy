@@ -14,6 +14,7 @@ $options   = 0;
 $encryption_iv = '1234567891011121';
 $encryption_key = "W3docs";
 @$encryption = openssl_encrypt($password, $ciphering, $encryption_key, $options, $encryption_iv);
+
 // image
 $file = $_FILES['file'];
   $fileName = $_FILES['file']['name'];
@@ -192,7 +193,7 @@ $date=date("Y/m/d h:i:s");
 
 
 
-$select ="SELECT * from medicines_order where id_m='$idm' and id_user='$user' and valid='non' and  valid_user='non'";
+$select ="SELECT * from medicines_order where id_m='$idm' and id_user='$user' and valid='No' and  valid_user='non'";
 $rstselect1 = $con->query($select);
 
 if($rstselect1->num_rows >0)
@@ -260,7 +261,7 @@ $date=date("Y/m/d h:i:s");
 
 
 
-$updateqty ="UPDATE medicines_order set qty='$qty' where id_m='$idm' and id_user='$user' and valid='non'";
+$updateqty ="UPDATE medicines_order set qty='$qty' where id_m='$idm' and id_user='$user' and valid='No'";
 $rstselect1 = $con->query($updateqty);
 
 if($rstselect1 >0)

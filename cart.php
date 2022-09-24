@@ -226,6 +226,7 @@ if (!isset($_SESSION['Email1'])) {
                                         <th class="cart-product-image" width="16%">Image</th>
                                         <th class="cart-product-info" width="16%">Product</th>
                                         <th class="cart-product-price" width="16%">Price</th>
+                                        <th class="cart-product-info" width="16%">Type</th>
                                         <th class="cart-product-quantity" width="16%">Quantity</th>
                                         <th class="cart-product-quantity" width="16%">Total</th>
                                         <th class="cart-product-quantity" width="16%">Action</th>
@@ -244,9 +245,10 @@ if (!isset($_SESSION['Email1'])) {
                                                     <a href="product-page.php?id=<?php echo $row['idd'] ?>"><img src="Admin/<?php echo $row['image'] ?>" alt="#"></a>
                                                 </td>
                                                 <td class="cart-product-info" width="16%">
-                                                    <h4><a href="product-details.html"><?php echo $row['name'] ?></a></h4>
+                                                    <h4><a href="product-page.php?id=<?php echo $row['idd'] ?>"><?php echo $row['name'] ?></a></h4>
                                                 </td>
                                                 <td class="cart-product-price" width="16%"><?php echo $row['price'] ?> DHS</td>
+                                                <td class="cart-product-price" width="16%"><?php echo $row['type'] ?> </td>
                                                 <td class="cart-product-price" width="16%"><?php echo $row['qty'] ?></td>
                                                 <td width="16%"><?php echo ($row['qty'] * $row['price']) ?> DHS</td>
                                                 <?php if($row['valid_user'] === 'non'){ ?>

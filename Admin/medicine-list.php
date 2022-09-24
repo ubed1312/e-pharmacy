@@ -318,7 +318,7 @@ include_once('include/db.php');?>
 
 <!-- Mirrored from themesbrand.com/minible/layouts/ecommerce-orders.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 31 May 2022 13:16:20 GMT -->
 <script>
-     $(document).on('click', '.update_data', function(){
+    $(document).on('click', '.update_data', function(){
   //$('#dataModal').modal();
   var update = $(this).attr("id");
   $.ajax({

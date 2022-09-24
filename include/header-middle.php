@@ -89,7 +89,7 @@
                                             <a href="#"><i class="icon-user" > <span class="ltn__secondary-color"><?php echo $row['first_name']; ?></span> </i></a>
                                             <ul>
                                                 <li><a href="account.php">My Account</a></li>
-                                                <li><a href="wishlist.html">Wishlist</a></li>
+                                                <!-- <li><a href="wishlist.html">Wishlist</a></li> -->
                                                 <li><a href="login.php">Logout</a></li>
                                             </ul>
                                         <?php } else { ?>

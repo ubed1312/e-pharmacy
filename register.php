@@ -206,7 +206,7 @@
                             My Account
                         </a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="wishlist.html" title="Wishlist">
                             <span class="utilize-btn-icon">
                                 <i class="far fa-heart"></i>
@@ -215,7 +215,7 @@
                             Wishlist
                         </a>
                     </li>
-                    <li>
+                    <li> -->
                         <a href="cart.html" title="Shoping Cart">
                             <span class="utilize-btn-icon">
                                 <i class="fas fa-shopping-cart"></i>

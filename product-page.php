@@ -276,7 +276,16 @@ input[type=number]
                 </div>
             </div>
         </div>
-    </div>
+    
+    </div> 
+    <?php  
+    $id=$_REQUEST['id'];
+    $query = "SELECT type FROM medicines WHERE id = $id";
+    $rst = $con->query($query);
+    $row = mysqli_fetch_array($rst);
+    ?>
+    <br><br><h1 class="text-center"> <?php  echo $row['type'] ?> Type</h1> <br><br>
+    
     <!-- BREADCRUMB AREA END -->
     <?php
     include('Admin/include/db.php');
@@ -286,6 +295,8 @@ input[type=number]
     $row = mysqli_fetch_array($rst);
     ?>
     <!-- SHOP DETAILS AREA START -->
+
+    
     <div class="ltn__shop-details-area pb-85">
         <div class="container">
             <div class="row">
@@ -296,8 +307,8 @@ input[type=number]
                                 <div class="ltn__shop-details-img-gallery">
                                     <div class="ltn__shop-details-large-img">
                                         <div class="single-large-img">
-                                            <a href="img/product/1.png" data-rel="lightcase:myCollection">
-                                                <img src="Admin/<?php echo $row['image'] ?>" alt="Image">
+                                            <a href="Admin/<?php echo $row['image'] ?>" data-rel="lightcase:myCollection">
+                                                <img src="Admin/<?php echo $row['image'] ?>" >
                                             </a>
                                         </div>
                                     </div>
@@ -305,7 +316,7 @@ input[type=number]
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                    <h3><?php echo $row['name'] ?></h3>
+                            <br><br><br><br><br><h3><?php echo $row['name'] ?></h3>
                                     <div class="product-price">
                                         <span style="color:#0A9A73;"><?php echo $row['price'] ?> DHS</span>
                                     </div>
@@ -315,7 +326,7 @@ input[type=number]
                                                 <strong>Type :</strong> 
                                                 <span>
                                                     <?php 
-                                                    if($row['type']='Pharmacy'){
+                                                    if($row['type']=='Pharmacy'){
                                                     ?>
                                                     <a style="color:green;">with prescription</a>
                                                     <?php } else{ ?>
@@ -370,38 +381,7 @@ input[type=number]
                                         </ul>
                                         </form>
                                     </div>
-                                    <!-- <div class="ltn__product-details-menu-3">
-                                        <ul>
-                                            <li>
-                                                <a href="#" class="" title="Wishlist" data-bs-toggle="modal" data-bs-target="#liton_wishlist_modal">
-                                                    <i class="far fa-heart"></i>
-                                                    <span>Add to Wishlist</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="" title="Compare" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                                    <i class="fas fa-exchange-alt"></i>
-                                                    <span>Compare</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div> -->
-                                    <!-- <hr>
-                                    <div class="ltn__social-media">
-                                        <ul>
-                                            <li>Share:</li>
-                                            <li><a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                                            <li><a href="#" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                                            <li><a href="#" title="Linkedin"><i class="fab fa-linkedin"></i></a></li>
-                                            <li><a href="#" title="Instagram"><i class="fab fa-instagram"></i></a></li>
-                                            
-                                        </ul>
-                                    </div> -->
-                                    <!-- <hr>
-                                    <div class="ltn__safe-checkout">
-                                        <h5>Guaranteed Safe Checkout</h5>
-                                        <img src="img/icons/payment-2.png" alt="Payment Image">
-                                    </div> -->
+                                    
                                 </div>
                             </div>
                         </div>
@@ -411,7 +391,7 @@ input[type=number]
                         <div class="ltn__shop-details-tab-menu">
                             <div class="nav">
                                 <a class="active show" data-bs-toggle="tab" href="#liton_tab_details_1_1">Description</a>
-                                <a data-bs-toggle="tab" href="#liton_tab_details_1_2" class="">Reviews</a>
+                                <!-- <a data-bs-toggle="tab" href="#liton_tab_details_1_2" class="">Reviews</a> -->
                             </div>
                         </div>
                         <div class="tab-content">
@@ -423,8 +403,8 @@ input[type=number]
                             </div>
                             <div class="tab-pane fade" id="liton_tab_details_1_2">
                                 <div class="ltn__shop-details-tab-content-inner">
-                                    <h4 class="title-2">Customer Reviews</h4>
-                                    <div class="product-ratting">
+                                    <!-- <h4 class="title-2">Customer Reviews</h4> -->
+                                    <!-- <div class="product-ratting">
                                         <ul>
                                             <li><a href="#"><i class="fas fa-star"></i></a></li>
                                             <li><a href="#"><i class="fas fa-star"></i></a></li>
@@ -433,10 +413,10 @@ input[type=number]
                                             <li><a href="#"><i class="far fa-star"></i></a></li>
                                             <li class="review-total"> <a href="#"> ( 95 Reviews )</a></li>
                                         </ul>
-                                    </div>
+                                    </div> -->
                                     <hr>
                                     <!-- comment-area -->
-                                    <div class="ltn__comment-area mb-30">
+                                    <!-- <div class="ltn__comment-area mb-30">
                                         <div class="ltn__comment-inner">
                                             <ul>
                                                 <li>
@@ -504,9 +484,9 @@ input[type=number]
                                                 </li>
                                             </ul>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <!-- comment-reply -->
-                                    <div class="ltn__comment-reply-area ltn__form-box mb-30">
+                                    <!-- <div class="ltn__comment-reply-area ltn__form-box mb-30">
                                         <form action="#">
                                             <h4 class="title-2">Add a Review</h4>
                                             <div class="mb-30">
@@ -540,7 +520,7 @@ input[type=number]
                                                 <button class="btn theme-btn-1 btn-effect-1 text-uppercase" type="submit">Submit</button>
                                             </div>
                                         </form>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
@@ -570,7 +550,8 @@ input[type=number]
                 $rst1 = $con->query($sql1);
                 $row1 = mysqli_fetch_array($rst1);
                 $type= $row1['type'];
-                $sql2="SELECT * from medicines where type='$type' and id!=$id limit 5";
+                $date = date("Y-m-d");
+                $sql2="SELECT * from medicines where type='$type' and id!=$id and stock!=0 and is_deleted='Available' and expiry_date > '$date' limit 5";
                 $rst2 = $con->query($sql2);
                 while ($row2 = $rst2->fetch_assoc()){
                 ?>

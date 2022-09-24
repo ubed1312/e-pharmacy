@@ -191,6 +191,11 @@ session_start();
     <div class="ltn__product-area ltn__product-gutter mb-120">
         <div class="container">
             <div class="row">
+            <div>
+            <h1 class="text-center"> Parapharmacy
+                 Type</h1>
+</div>   <br><br><br><br>
+
                 <div class="col-lg-12">
                     <div class="ltn__shop-options">
                         <ul>
