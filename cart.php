@@ -256,9 +256,11 @@ if (!isset($_SESSION['Email1'])) {
                                                     <a class="deleteID" data-bs-toggle="modal" data-bs-target="#delete" data-id="<?php echo $row['id'] ?>"><i class="fa fa-trash" style="color:red;"> Delete</i></a>
                                                 </td><?php } else if ($row['valid'] === 'No'){ ?>
                                                    <td><p style="color:green;">Order being checked</p></td> 
-                                                    <?php }else{ ?>
+                                                    <?php }else if ($row['valid'] === 'Accept'){ ?>
                                                         <td><p style="color:green;">Order in the process of delivery</p></td>
-                                                        <?php } ?>
+                                                        <?php }else{ ?>
+                                                            <td><p style="color:red;">Denied</p></td>
+                                                            <?php } ?>
                                             </tr>
                                         <?php } ?>
                                     </tbody>

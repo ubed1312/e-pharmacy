@@ -110,13 +110,17 @@ include_once('include/db.php'); ?>
                                                 <?php } ?>
                                                 <?php if ($row['valid'] === 'No') { ?>
                                                     <td>
-                                                        <div class="badge bg-pill bg-soft-danger font-size-12">No</div>
+                                                        <div >No</div>
                                                     </td>
-                                                <?php } else { ?>
+                                                <?php } elseif($row['valid'] === 'Accept') { ?>
                                                     <td>
-                                                        <div class="badge bg-pill bg-soft-success font-size-12">Yes</div>
+                                                        <div class="badge bg-pill bg-soft-success font-size-12">Accept</div>
                                                     </td>
-                                                <?php } ?>
+                                                <?php }else{ ?>
+                                                    <td>
+                                                        <div class="badge bg-pill bg-soft-danger font-size-12">Denied</div>
+                                                    </td>
+                                                    <?php } ?>
                                                 <?php if ($row['delivery'] === 'Not yet') { ?>
                                                     <td>
                                                         <div class="badge bg-pill bg-soft-danger font-size-12">Not yet</div>

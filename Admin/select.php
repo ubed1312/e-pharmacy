@@ -291,8 +291,8 @@ if(isset($_POST["updatedeli"]))
      <label for="recipient-name" class="col-form-label">Type:</label>
      <select class="form-select" aria-label="Default select example" name="type" id="type"   required>
          <option selected style="display: none;" value="'.$row['valid'].'">'.$row['valid'].'</option>
-         <option value="Yes">Yes</option>
-         <option value="No">No</option>
+         <option value="Accept">Accept</option>
+         <option value="Denied">Denied</option>
      </select>
         </tr>
      ';

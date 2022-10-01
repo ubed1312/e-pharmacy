@@ -758,8 +758,9 @@ if(isset($_POST['updatevalidationadmin']))
 {
 $id = $_POST['id'];
 $email = $_POST['email'];
+$type = $_POST['type'];
 
-$sql10 = "UPDATE medicines_order set valid='Yes' where id=$id ";
+$sql10 = "UPDATE medicines_order set valid='$type' where id=$id ";
 $result10 =$con->query($sql10);
 if($result10 > 0){
     echo  '
