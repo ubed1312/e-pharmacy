@@ -137,9 +137,11 @@ include_once('include/db.php'); ?>
                                                     <?php if ($row['valid'] === 'No') { ?>
                                                     <a class="px-3 text-warning update" data-id="<?php echo $row['da'] ?>"  ><i class="uil uil-edit font-size-18"></i>Update order</a>
                                                     <?php } else {} ?>
+                                                    <?php if ($row['valid'] === 'Denied') { ?>
+                                                        <?php }else{ ?>
                                                     <?php if ($row['delivery'] === 'Not yet') { ?>
                                                     <a class="px-3 text-info updatedelivery" data-id="<?php echo $row['da'] ?>"  ><i class="uil uil-edit font-size-18"></i>Update Delivery</a>
-                                                    <?php } else {} ?>
+                                                    <?php } else {}} ?>
                                                 
                                                     
 
