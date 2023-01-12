@@ -4,7 +4,7 @@
                     <div class="col header-menu-column justify-content-center">
                         <div class="sticky-logo">
                             <div class="site-logo">
-                                <a href="index.php"><img src="img/logo-3.png" alt="Logo"></a>
+                                <a href="index.php"><img src="img/logo1.jpg" alt="Logo"></a>
                             </div>
                         </div>
                         <div class="header-menu header-menu-2">
@@ -29,7 +29,7 @@
                                         </li>
                                         <li class="menu-icon"><a href="#">About</a>
                                             <ul>
-                                                <li><a href="about.html">About</a></li>
+                                                <li><a href="about.php">About</a></li>
                                                  <li><a href="service.html">Services</a></li>
                                                 <!--<li><a href="service-details.html">Service Details</a></li>
                                                 <li><a href="portfolio.html">Gallery</a></li>
@@ -44,7 +44,10 @@
                                         <li class="menu-icon"><a href="#">Shop</a>
                                             <ul>
                                                 <li><a href="shop-parapharmacy.php">Shop Parapharmacy</a></li>
-                                                <li><a href="shop-pharmacy.php">Shop Pharmacy</a></li>
+                                                <!-- <li><a href="shop-pharmacy.php">Shop Pharmacy</a></li> -->
+
+
+                                                
                                                 <!-- <li><a href="shop-right-sidebar.html">Shop right sidebar</a></li>
                                                 <li><a href="product-details.html">Shop details </a></li> -->
                                                 <!-- <li><a href="#">Other Pages <span class="float-right"></span></a>
@@ -105,7 +108,7 @@
                                                 </li>
                                             </ul>
                                         </li> -->
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="contact.php">Contact</a></li>
                                     </ul>
                                 </div>
                             </nav>

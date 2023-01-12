@@ -135,7 +135,7 @@ input[type=number]
         <div class="ltn__utilize-menu-inner ltn__scrollbar">
             <div class="ltn__utilize-menu-head">
                 <div class="site-logo">
-                    <a href="index.html"><img src="img/logo.png" alt="Logo"></a>
+                    <a href="index.html"><img src="img/logo.jpg" alt="Logo"></a>
                 </div>
                 <button class="ltn__utilize-close">×</button>
             </div>
@@ -147,16 +147,16 @@ input[type=number]
             </div>
             <div class="ltn__utilize-menu">
                 <ul>
-                    <li><a href="#">Home</a>
+                    <!-- <li><a href="#">Home</a>
                         <ul class="sub-menu">
                             <li><a href="index.html">Home Style 01</a></li>
                             <li><a href="index-2.html">Home Style 02</a></li>
                             <li><a href="index-3.html">Home Style 03</a></li>
                         </ul>
-                    </li>
+                    </li> -->
                     <li><a href="#">About</a>
                         <ul class="sub-menu">
-                            <li><a href="about.html">About</a></li>
+                            <li><a href="about.php">About</a></li>
                             <li><a href="service.html">Services</a></li>
                             <li><a href="service-details.html">Service Details</a></li>
                             <li><a href="portfolio.html">Portfolio</a></li>
@@ -195,7 +195,7 @@ input[type=number]
                     </li>
                     <li><a href="#">Pages</a>
                         <ul class="sub-menu">
-                            <li><a href="about.html">About</a></li>
+                            <li><a href="about.php">About</a></li>
                             <li><a href="service.html">Services</a></li>
                             <li><a href="service-details.html">Service Details</a></li>
                             <li><a href="portfolio.html">Portfolio</a></li>
@@ -260,7 +260,7 @@ input[type=number]
     <div class="ltn__utilize-overlay"></div>
 
     <!-- BREADCRUMB AREA START -->
-    <div class="ltn__breadcrumb-area text-left bg-overlay-white-30 bg-image"  data-bs-bg="img/bg/medicines.jpg">
+    <div class="ltn__breadcrumb-area text-left bg-overlay-white-20 bg-image"  data-bs-bg="img/product/product1.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -268,7 +268,7 @@ input[type=number]
                         <h1 class="page-title">Product Details</h1>
                         <div class="ltn__breadcrumb-list">
                             <ul>
-                                <li><a href="index.html"><span class="ltn__secondary-color"><i class="fas fa-home"></i></span> Home</a></li>
+                                <li><a href="index.php"><span class="ltn__secondary-color"><i class="fas fa-home"></i></span> Home</a></li>
                                 <li>Product Details</li>
                             </ul>
                         </div>
@@ -609,7 +609,7 @@ input[type=number]
                 <div class="col-lg-12">
                     <div class="call-to-action-inner call-to-action-inner-6 ltn__secondary-bg position-relative text-center---">
                         <div class="coll-to-info text-color-white">
-                            <h1>Buy medical disposable face mask <br> to protect your loved ones</h1>
+                        <h1>Buy energy vitamins to protect  <br>your body</h1>
                         </div>
                         <div class="btn-wrapper">
                             <a class="btn btn-effect-3 btn-white" href="shop.html">Explore Products <i class="icon-next"></i></a>
@@ -630,20 +630,20 @@ input[type=number]
                         <div class="footer-widget footer-about-widget">
                             <div class="footer-logo">
                                 <div class="site-logo">
-                                    <img src="img/logo-2.png" alt="Logo">
+                                    <img src="img/logolekher.png" alt="Logo">
                                 </div>
                             </div>
-                            <p>Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum is dummy text of the printing.</p>
+                            <!-- <p>Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum is dummy text of the printing.</p> -->
                             <div class="footer-address">
                                 <ul>
-                                    <li>
+                                    <!-- <li>
                                         <div class="footer-address-icon">
                                             <i class="icon-placeholder"></i>
                                         </div>
                                         <div class="footer-address-info">
                                             <p>Brooklyn, New York, United States</p>
                                         </div>
-                                    </li>
+                                    </li> -->
                                     <li>
                                         <div class="footer-address-icon">
                                             <i class="icon-call"></i>
@@ -672,52 +672,52 @@ input[type=number]
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-md-6 col-sm-6 col-12">
+                    <div class="col-xl-3">
                         <div class="footer-widget footer-menu-widget clearfix">
                             <h4 class="footer-title">Company</h4>
                             <div class="footer-menu">
                                 <ul>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="shop.html">All Products</a></li>
-                                    <li><a href="locations.html">Locations Map</a></li>
+                                    <li><a href="about.php">About</a></li>
+                                    <!-- <li><a href="blog.html">Blog</a></li> -->
+                                    <li><a href="shop-parapharmacy.php">All Products</a></li>
+                                    <!-- <li><a href="locations.html">Locations Map</a></li> -->
                                     <li><a href="faq.html">FAQ</a></li>
-                                    <li><a href="contact.html">Contact us</a></li>
+                                    <li><a href="contact.php">Contact us</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-md-6 col-sm-6 col-12">
+                    <div class="col-xl-3">
                         <div class="footer-widget footer-menu-widget clearfix">
                             <h4 class="footer-title">Services</h4>
                             <div class="footer-menu">
                                 <ul>
-                                    <li><a href="order-tracking.html">Order tracking</a></li>
+                                    <!-- <li><a href="order-tracking.html">Order tracking</a></li> -->
                                     <li><a href="wishlist.html">Wish List</a></li>
-                                    <li><a href="login.html">Login</a></li>
-                                    <li><a href="account.html">My account</a></li>
-                                    <li><a href="about.html">Terms & Conditions</a></li>
-                                    <li><a href="about.html">Promotional Offers</a></li>
+                                    <li><a href="login.php">Login</a></li>
+                                    <li><a href="about.php">Terms & Conditions</a></li>
+                                    <li><a href="faq.html">FAQ</a></li>
+
+                                    <!-- <li><a href="about.php">Promotional Offers</a></li> -->
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-md-6 col-sm-6 col-12">
+                    <div class="col-xl-3">
                         <div class="footer-widget footer-menu-widget clearfix">
                             <h4 class="footer-title">Customer Care</h4>
                             <div class="footer-menu">
                                 <ul>
-                                    <li><a href="login.html">Login</a></li>
-                                    <li><a href="account.html">My account</a></li>
-                                    <li><a href="wishlist.html">Wish List</a></li>
-                                    <li><a href="order-tracking.html">Order tracking</a></li>
-                                    <li><a href="faq.html">FAQ</a></li>
-                                    <li><a href="contact.html">Contact us</a></li>
+                                    <li><a href="login.php">Login</a></li>
+                                    <li><a href="account.php">My account</a></li>
+                                    <!-- <li><a href="wishlist.html">Wish List</a></li> -->
+                                    <li><a href="cart.php">Order tracking</a></li>
+                                    <li><a href="contact.php">Contact us</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-6 col-sm-12 col-12">
+                    <!-- <div class="col-xl-3 col-md-6 col-sm-12 col-12">
                         <div class="footer-widget footer-newsletter-widget">
                             <h4 class="footer-title">Newsletter</h4>
                             <p>Subscribe to our weekly Newsletter and receive updates via email.</p>
@@ -732,7 +732,7 @@ input[type=number]
                             <h5 class="mt-30">We Accept</h5>
                             <img src="img/icons/payment-4.png" alt="Payment Image">
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -741,10 +741,10 @@ input[type=number]
                 <div class="row">
                     <div class="col-md-6 col-12">
                         <div class="ltn__copyright-design clearfix">
-                            <p>All Rights Reserved @ Company <span class="current-year"></span></p>
+                            <p>All Rights Reserved @ MoulPharmacy <span class="current-year"></span></p>
                         </div>
                     </div>
-                    <div class="col-md-6 col-12 align-self-center">
+                    <!-- <div class="col-md-6 col-12 align-self-center">
                         <div class="ltn__copyright-menu text-end">
                             <ul>
                                 <li><a href="#">Terms & Conditions</a></li>
@@ -752,13 +752,15 @@ input[type=number]
                                 <li><a href="#">Privacy & Policy</a></li>
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
     </footer>
     <!-- FOOTER AREA END -->
 
+    <!-- MODAL AREA START (Quick View Modal) -->
+    <div class="ltn__modal-area ltn__quick-view-modal-area">
     <!-- MODAL AREA START (Quick View Modal) -->
     <div class="ltn__modal-area ltn__quick-view-modal-area">
         <div class="modal fade" id="quick_view_modal" tabindex="-1">

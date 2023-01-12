@@ -66,7 +66,7 @@ session_start();
         <div class="ltn__utilize-menu-inner ltn__scrollbar">
             <div class="ltn__utilize-menu-head">
                 <div class="site-logo">
-                    <a href="index.html"><img src="img/logo.png" alt="Logo"></a>
+                    <a href="index.html"><img src="img/logo.jpg" alt="Logo"></a>
                 </div>
                 <button class="ltn__utilize-close">×</button>
             </div>
@@ -78,16 +78,16 @@ session_start();
             </div>
             <div class="ltn__utilize-menu">
                 <ul>
-                    <li><a href="#">Home</a>
+                    <!-- <li><a href="#">Home</a>
                         <ul class="sub-menu">
                             <li><a href="index.html">Home Style 01</a></li>
                             <li><a href="index-2.html">Home Style 02</a></li>
                             <li><a href="index-3.html">Home Style 03</a></li>
                         </ul>
-                    </li>
+                    </li> -->
                     <li><a href="#">About</a>
                         <ul class="sub-menu">
-                            <li><a href="about.html">About</a></li>
+                            <li><a href="about.php">About</a></li>
                             <li><a href="service.html">Services</a></li>
                             <!-- <li><a href="service-details.html">Service Details</a></li>
                             <li><a href="portfolio.html">Portfolio</a></li>
@@ -125,7 +125,7 @@ session_start();
                         </ul>
                     </li> -->
                     
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                 </ul>
             </div>
             <div class="ltn__utilize-buttons ltn__utilize-buttons-2">
@@ -186,7 +186,7 @@ session_start();
                             <ul>
                                 <!-- Submenu -->
                                 <li >
-                                    <a href="shop-pharmacy.php"><i class="icon-shopping-cart"></i>Pharmacy</a>
+                                    <!-- <a href="shop-pharmacy.php"><i class="icon-shopping-cart"></i>Pharmacy</a> -->
                                 </li>
                                 <!-- Submenu -->
                                 <li >
@@ -201,7 +201,7 @@ session_start();
                 <div class="col-lg-9">
                     <div class="ltn__slide-active-2 slick-slide-arrow-1 slick-slide-dots-1">
                         <!-- ltn__slide-item -->
-                        <div class="ltn__slide-item ltn__slide-item-10 section-bg-1 bg-image" data-bs-bg="img/slider/61.jpg">
+                        <div class="ltn__slide-item ltn__slide-item-10 section-bg-1 bg-image" data-bs-bg="img/image5.jpg">
                             <div class="ltn__slide-item-inner">
                                 <div class="container">
                                     <div class="row">
@@ -230,7 +230,7 @@ session_start();
                             </div>
                         </div>
                         <!-- ltn__slide-item -->
-                        <div class="ltn__slide-item ltn__slide-item-10 section-bg-1 bg-image" data-bs-bg="img/slider/62.jpg">
+                        <div class="ltn__slide-item ltn__slide-item-10 section-bg-1 bg-image" data-bs-bg="img/image1.jpg">
                             <div class="ltn__slide-item-inner">
                                 <div class="container">
                                     <div class="row">
@@ -294,7 +294,8 @@ session_start();
                             </div>
                             <div class="ltn__feature-info">
                                 <h4>Secure checkout</h4>
-                                <p>Protected by Paypal</p>
+                                <!-- <p>Protected by Paypal</p> -->
+                                <p>Cash payment method</p>
                             </div>
                         </div>
                         <div class="ltn__feature-item ltn__feature-item-8">
@@ -326,7 +327,7 @@ session_start();
                     <div class="ltn__tab-menu ltn__tab-menu-2 ltn__tab-menu-top-right-- text-uppercase text-center">
                         <div class="nav">
                             <a class="active show" data-bs-toggle="tab" href="#liton_tab_3_1">Parapharmacy</a>
-                            <a data-bs-toggle="tab" href="#liton_tab_3_2" class="">Pharmacy</a>
+                            <!-- <a data-bs-toggle="tab" href="#liton_tab_3_2" class="">Pharmacy</a> -->
                         </div>
                     </div>
                     <div class="tab-content">
@@ -360,11 +361,13 @@ session_start();
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="liton_tab_3_2">
+
+
+                        <!-- <div class="tab-pane fade" id="liton_tab_3_2">
                             <div class="ltn__product-tab-content-inner">
-                                <div class="row ltn__tab-product-slider-one-active slick-arrow-1">
+                                <div class="row ltn__tab-product-slider-one-active slick-arrow-1"> -->
                                     <!-- ltn__product-item -->
-                                    <?php 
+                                    <?php /*
                                     include('Admin/include/db.php');
                                     $date = date("Y-m-d");
                                     $para = "SELECT * from medicines where type='Pharmacy' and is_deleted='Available' and  expiry_date > '$date'  limit 6 ";
@@ -412,11 +415,13 @@ session_start();
                                                 </div>
                                             </div>
                                         </div>
-                                        <?php } ?>
+                                        <?php ?>
                                     <!--  -->
                                 </div>
                             </div>
-                        </div>
+                        </div>  */?>
+
+
                         <div class="tab-pane fade" id="liton_tab_3_3">
                             <div class="ltn__product-tab-content-inner">
                                 <div class="row ltn__tab-product-slider-one-active slick-arrow-1">
@@ -2144,13 +2149,18 @@ session_start();
     </div>
     <!-- ABOUT US AREA END -->
 
+
+
+
+<!-- In the middle used for adding a product with time for a discount or maybe for a reduction for only 24hrs -->
+
     <!-- COUNTDOWN AREA START -->
-    <div class="ltn__call-to-action-area section-bg-1 bg-image pt-120 pb-120" data-bs-bg="img/bg/27.jpg">
+    <!-- <div class="ltn__call-to-action-area section-bg-1 bg-image pt-120 pb-120" data-bs-bg="img/bg/27.jpg">
         <div class="container">
             <div class="row">
-                <div class="col-lg-7 col-md-6 col-sm-4">
+                <div class="col-lg-7 col-md-6 col-sm-4"> -->
                     <!-- <img src="img/banner/15.png" alt="#"> -->
-                </div>
+                <!-- </div>
                 <div class="col-lg-5 col-md-6 col-sm-8">
                     <div class="call-to-action-inner text-color-white--- text-center---">
                         <div class="section-title-area ltn__section-title-2--- text-center---">
@@ -2167,8 +2177,15 @@ session_start();
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- COUNTDOWN AREA END -->
+
+
+
+
+
+
+
 
     <!-- PRODUCT AREA START (product-item-3) -->
     <!-- <div class="ltn__product-area ltn__product-gutter pt-115 pb-70">
@@ -2915,7 +2932,7 @@ session_start();
                 <div class="col-lg-12">
                     <div class="call-to-action-inner call-to-action-inner-6 ltn__secondary-bg position-relative text-center---">
                         <div class="coll-to-info text-color-white">
-                            <h1>Buy medical disposable face mask <br> to protect your loved ones</h1>
+                            <h1>Buy energy vitamins to protect  <br>your body</h1>
                         </div>
                         <div class="btn-wrapper">
                             <a class="btn btn-effect-3 btn-white" href="shop.html">Explore Products <i class="icon-next"></i></a>
@@ -2927,6 +2944,7 @@ session_start();
     </div>
     <!-- CALL TO ACTION END -->
 
+
     <!-- FOOTER AREA START -->
     <footer class="ltn__footer-area  ">
         <div class="footer-top-area  section-bg-2 plr--5">
@@ -2936,20 +2954,20 @@ session_start();
                         <div class="footer-widget footer-about-widget">
                             <div class="footer-logo">
                                 <div class="site-logo">
-                                    <img src="img/logo-2.png" alt="Logo">
+                                    <img src="img/logolekher.png" alt="Logo">
                                 </div>
                             </div>
-                            <p>Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum is dummy text of the printing.</p>
+                            <!-- <p>Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum is dummy text of the printing.</p> -->
                             <div class="footer-address">
                                 <ul>
-                                    <li>
+                                    <!-- <li>
                                         <div class="footer-address-icon">
                                             <i class="icon-placeholder"></i>
                                         </div>
                                         <div class="footer-address-info">
                                             <p>Brooklyn, New York, United States</p>
                                         </div>
-                                    </li>
+                                    </li> -->
                                     <li>
                                         <div class="footer-address-icon">
                                             <i class="icon-call"></i>
@@ -2978,52 +2996,52 @@ session_start();
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-md-6 col-sm-6 col-12">
+                    <div class="col-xl-3">
                         <div class="footer-widget footer-menu-widget clearfix">
                             <h4 class="footer-title">Company</h4>
                             <div class="footer-menu">
                                 <ul>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="shop.html">All Products</a></li>
-                                    <li><a href="locations.html">Locations Map</a></li>
+                                    <li><a href="about.php">About</a></li>
+                                    <!-- <li><a href="blog.html">Blog</a></li> -->
+                                    <li><a href="shop-parapharmacy.php">All Products</a></li>
+                                    <!-- <li><a href="locations.html">Locations Map</a></li> -->
                                     <li><a href="faq.html">FAQ</a></li>
-                                    <li><a href="contact.html">Contact us</a></li>
+                                    <li><a href="contact.php">Contact us</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-md-6 col-sm-6 col-12">
+                    <div class="col-xl-3">
                         <div class="footer-widget footer-menu-widget clearfix">
                             <h4 class="footer-title">Services</h4>
                             <div class="footer-menu">
                                 <ul>
-                                    <li><a href="order-tracking.html">Order tracking</a></li>
+                                    <!-- <li><a href="order-tracking.html">Order tracking</a></li> -->
                                     <li><a href="wishlist.html">Wish List</a></li>
-                                    <li><a href="login.html">Login</a></li>
-                                    <li><a href="account.html">My account</a></li>
-                                    <li><a href="about.html">Terms & Conditions</a></li>
-                                    <li><a href="about.html">Promotional Offers</a></li>
+                                    <li><a href="login.php">Login</a></li>
+                                    <li><a href="about.php">Terms & Conditions</a></li>
+                                    <li><a href="faq.html">FAQ</a></li>
+
+                                    <!-- <li><a href="about.php">Promotional Offers</a></li> -->
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-md-6 col-sm-6 col-12">
+                    <div class="col-xl-3">
                         <div class="footer-widget footer-menu-widget clearfix">
                             <h4 class="footer-title">Customer Care</h4>
                             <div class="footer-menu">
                                 <ul>
-                                    <li><a href="login.html">Login</a></li>
-                                    <li><a href="account.html">My account</a></li>
-                                    <li><a href="wishlist.html">Wish List</a></li>
-                                    <li><a href="order-tracking.html">Order tracking</a></li>
-                                    <li><a href="faq.html">FAQ</a></li>
-                                    <li><a href="contact.html">Contact us</a></li>
+                                    <li><a href="login.php">Login</a></li>
+                                    <li><a href="account.php">My account</a></li>
+                                    <!-- <li><a href="wishlist.html">Wish List</a></li> -->
+                                    <li><a href="cart.php">Order tracking</a></li>
+                                    <li><a href="contact.php">Contact us</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-6 col-sm-12 col-12">
+                    <!-- <div class="col-xl-3 col-md-6 col-sm-12 col-12">
                         <div class="footer-widget footer-newsletter-widget">
                             <h4 class="footer-title">Newsletter</h4>
                             <p>Subscribe to our weekly Newsletter and receive updates via email.</p>
@@ -3038,7 +3056,7 @@ session_start();
                             <h5 class="mt-30">We Accept</h5>
                             <img src="img/icons/payment-4.png" alt="Payment Image">
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -3047,10 +3065,10 @@ session_start();
                 <div class="row">
                     <div class="col-md-6 col-12">
                         <div class="ltn__copyright-design clearfix">
-                            <p>All Rights Reserved @ Company <span class="current-year"></span></p>
+                            <p>All Rights Reserved @ MoulPharmacy <span class="current-year"></span></p>
                         </div>
                     </div>
-                    <div class="col-md-6 col-12 align-self-center">
+                    <!-- <div class="col-md-6 col-12 align-self-center">
                         <div class="ltn__copyright-menu text-end">
                             <ul>
                                 <li><a href="#">Terms & Conditions</a></li>
@@ -3058,7 +3076,7 @@ session_start();
                                 <li><a href="#">Privacy & Policy</a></li>
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
