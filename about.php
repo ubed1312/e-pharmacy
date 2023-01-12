@@ -141,7 +141,7 @@ input[type=number]
                 <button class="ltn__utilize-close">×</button>
             </div>
             <div class="ltn__utilize-menu-search-form">
-                <form action="#">
+                <form action="#"> 
                     <input type="text" placeholder="Search...">
                     <button><i class="fas fa-search"></i></button>
                 </form>
