@@ -30,15 +30,15 @@
                                         <li class="menu-icon"><a href="#">About</a>
                                             <ul>
                                                 <li><a href="about.php">About</a></li>
-                                                 <li><a href="service.html">Services</a></li>
+                                                <!-- <li><a href="service.html">Services</a></li> -->
                                                 <!--<li><a href="service-details.html">Service Details</a></li>
                                                 <li><a href="portfolio.html">Gallery</a></li>
                                                 <li><a href="portfolio-2.html">Gallery - 02</a></li>
                                                 <li><a href="portfolio-details.html">Gallery Details</a></li> -->
-                                                <li><a href="team.html">Team</a></li>
-                                                <li><a href="team-details.html">Team Details</a></li>
-                                                <li><a href="faq.html">FAQ</a></li>
-                                                <li><a href="locations.html">Google Map Locations</a></li>
+                                                <!-- <li><a href="team.html">Team</a></li> -->
+                                                <!-- <li><a href="team-details.html">Team Details</a></li> -->
+                                                <li><a href="faq.php">FAQ</a></li>
+                                                <!-- <li><a href="locations.html">Google Map Locations</a></li> -->
                                             </ul>
                                         </li>
                                         <li class="menu-icon"><a href="#">Shop</a>

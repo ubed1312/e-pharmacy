@@ -355,7 +355,7 @@ while ($rowpha = mysqli_fetch_assoc($empResult)) {
                         <h1>Buy energy vitamins to protect  <br>your body</h1>
                         </div>
                         <div class="btn-wrapper">
-                            <a class="btn btn-effect-3 btn-white" href="shop.html">Explore Products <i class="icon-next"></i></a>
+                            <a class="btn btn-effect-3 btn-white" href="shop-parapharmacy.php">Explore Products <i class="icon-next"></i></a>
                         </div>
                     </div>
                 </div>
@@ -392,7 +392,7 @@ while ($rowpha = mysqli_fetch_assoc($empResult)) {
                                             <i class="icon-call"></i>
                                         </div>
                                         <div class="footer-address-info">
-                                            <p><a href="tel:+0123-456789">+0123-456789</a></p>
+                                            <p><a href="tel:+0123-456789">+212-456789</a></p>
                                         </div>
                                     </li>
                                     <li>
@@ -400,7 +400,7 @@ while ($rowpha = mysqli_fetch_assoc($empResult)) {
                                             <i class="icon-mail"></i>
                                         </div>
                                         <div class="footer-address-info">
-                                            <p><a href="mailto:example@example.com">example@example.com</a></p>
+                                            <p><a href="mailto:example@example.com">moulpharmacy@gmail.com</a></p>
                                         </div>
                                     </li>
                                 </ul>

@@ -95,21 +95,21 @@ session_start();
                             <li><a href="portfolio-details.html">Portfolio Details</a></li>-->
                             <li><a href="team.html">Team</a></li>
                             <li><a href="team-details.html">Team Details</a></li> 
-                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="faq.php">FAQ</a></li>
                             <li><a href="locations.html">Google Map Locations</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Shop</a>
                         <ul class="sub-menu">
                             <li><a href="shop.html">Shop</a></li>
-                            <li><a href="shop-grid.html">Shop Grid</a></li>
+                            <!-- <li><a href="shop-grid.html">Shop Grid</a></li>
                             <li><a href="shop-left-sidebar.html">Shop Left sidebar</a></li>
-                            <li><a href="shop-right-sidebar.html">Shop right sidebar</a></li>
+                            <li><a href="shop-right-sidebar.html">Shop right sidebar</a></li> -->
                             <li><a href="product-details.html">Shop details </a></li>
-                            <li><a href="cart.html">Cart</a></li>
+                            <!-- <li><a href="cart.html">Cart</a></li>
                             <li><a href="wishlist.html">Wishlist</a></li>
-                            <li><a href="checkout.html">Checkout</a></li>
-                            <li><a href="order-tracking.html">Order Tracking</a></li>
+                            <li><a href="checkout.html">Checkout</a></li> -->
+                            <!-- <li><a href="order-tracking.html">Order Tracking</a></li> -->
                             <li><a href="account.html">My Account</a></li>
                             <li><a href="login.html">Sign in</a></li>
                             <li><a href="register.html">Register</a></li>
@@ -298,7 +298,7 @@ session_start();
                                 <p>Cash payment method</p>
                             </div>
                         </div>
-                        <div class="ltn__feature-item ltn__feature-item-8">
+                        <!-- <div class="ltn__feature-item ltn__feature-item-8">
                             <div class="ltn__feature-icon">
                                 <img src="img/icons/svg/11-gift-card.svg" alt="#">
                             </div>
@@ -306,7 +306,7 @@ session_start();
                                 <h4>Offer & gift here</h4>
                                 <p>On all orders over</p>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -333,6 +333,7 @@ session_start();
                     <div class="tab-content">
                         <div class="tab-pane fade active show" id="liton_tab_3_1">
                             <div class="ltn__product-tab-content-inner">
+                            
                                 <div class="row ltn__tab-product-slider-one-active slick-arrow-1">
                                     <!-- ltn__product-item -->
                                     <?php 
@@ -340,13 +341,17 @@ session_start();
                                     $date = date("Y-m-d");
                                     $para = "SELECT * from medicines where type='Parapharmacy' and stock!=0 and is_deleted='Available' and expiry_date > '$date'  limit 6 ";
                                     $rstpara = $con->query($para);
-                                    while ($rowpara = $rstpara->fetch_assoc()){
+                                    while ($rowpara = $rstpara -> fetch_assoc()){
                                     ?>
-                                        <div class="ltn__product-item ltn__product-item-3 text-center">
+
+                                            <div class="ltn__product-item ltn__product-item-3 text-center">
                                             <div class="product-img">
-                                                <a href="product-page.php?id=<?php echo $rowpara['id'] ?>" ><img  src="Admin/<?php echo $rowpara['image'] ?>" width="200" height="auto" alt="#"></a>
-                                                <div class="product-badge">
+                                            
+                                               <a href="product-page.php?id=<?php echo $rowpara['id'] ?>" ><img  src="Admin/<?php echo $rowpara['image'] ?>" width="200" height="auto" alt="#"></a>
+                                            
+                                            <div class="product-badge">
                                                 </div>
+                                                
                                             </div>
                                             <div class="product-info">
                                                 <h2 class="product-title"><a href="product-page.php?id=<?php echo $rowpara['id'] ?>"><?php echo $rowpara['name']; ?></a></h2>
@@ -354,13 +359,15 @@ session_start();
                                                     <span><?php echo $rowpara['price'] ?> DHS</span>
                                                 </div>
                                             </div>
+                                    
+
                                         </div>
+
                                         <?php } ?>
                                     
                                     <!--  -->
                                 </div>
-                            </div>
-                        </div>
+                                                    </div>
 
 
                         <!-- <div class="tab-pane fade" id="liton_tab_3_2">
@@ -2576,7 +2583,7 @@ session_start();
     <!-- PRODUCT AREA END -->
 
     <!-- SMALL PRODUCT LIST AREA START -->
-    <div class="ltn__small-product-list-area section-bg-1 pt-115 pb-90 mb-120">
+    <!-- <div class="ltn__small-product-list-area section-bg-1 pt-115 pb-90 mb-120">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -2585,9 +2592,9 @@ session_start();
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row"> -->
                 <!-- small-product-item -->
-                <div class="col-lg-4 col-md-6 col-12">
+                <!-- <div class="col-lg-4 col-md-6 col-12">
                     <div class="ltn__small-product-item">
                         <div class="small-product-item-img">
                             <a href="product-details.html"><img src="img/product/1.png" alt="Image"></a>
@@ -2609,9 +2616,9 @@ session_start();
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- small-product-item -->
-                <div class="col-lg-4 col-md-6 col-12">
+                <!-- <div class="col-lg-4 col-md-6 col-12">
                     <div class="ltn__small-product-item">
                         <div class="small-product-item-img">
                             <a href="product-details.html"><img src="img/product/2.png" alt="Image"></a>
@@ -2633,9 +2640,9 @@ session_start();
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- small-product-item -->
-                <div class="col-lg-4 col-md-6 col-12">
+                <!-- <div class="col-lg-4 col-md-6 col-12">
                     <div class="ltn__small-product-item">
                         <div class="small-product-item-img">
                             <a href="product-details.html"><img src="img/product/3.png" alt="Image"></a>
@@ -2653,14 +2660,14 @@ session_start();
                             <h2 class="product-title"><a href="product-details.html">Thermometer Gun</a></h2>
                             <div class="product-price">
                                 
-                                <span>$135.00</span>
-                                <del>$145.00</del>
+                                <span>$135.00</span> -->
+                                <!-- <del>$145.00</del>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- small-product-item -->
-                <div class="col-lg-4 col-md-6 col-12">
+                <!-- <div class="col-lg-4 col-md-6 col-12">
                     <div class="ltn__small-product-item">
                         <div class="small-product-item-img">
                             <a href="product-details.html"><img src="img/product/4.png" alt="Image"></a>
@@ -2683,9 +2690,9 @@ session_start();
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- small-product-item -->
-                <div class="col-lg-4 col-md-6 col-12">
+                <!-- <div class="col-lg-4 col-md-6 col-12">
                     <div class="ltn__small-product-item">
                         <div class="small-product-item-img">
                             <a href="product-details.html"><img src="img/product/5.png" alt="Image"></a>
@@ -2709,8 +2716,8 @@ session_start();
                         </div>
                     </div>
                 </div>
-                <!-- small-product-item -->
-                <div class="col-lg-4 col-md-6 col-12">
+                small-product-item -->
+                <!-- <div class="col-lg-4 col-md-6 col-12">
                     <div class="ltn__small-product-item">
                         <div class="small-product-item-img">
                             <a href="product-details.html"><img src="img/product/6.png" alt="Image"></a>
@@ -2733,9 +2740,9 @@ session_start();
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- small-product-item -->
-                <div class="col-lg-4 col-md-6 col-12">
+                <!-- <div class="col-lg-4 col-md-6 col-12">
                     <div class="ltn__small-product-item">
                         <div class="small-product-item-img">
                             <a href="product-details.html"><img src="img/product/7.png" alt="Image"></a>
@@ -2758,9 +2765,9 @@ session_start();
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- small-product-item -->
-                <div class="col-lg-4 col-md-6 col-12">
+                <!-- <div class="col-lg-4 col-md-6 col-12">
                     <div class="ltn__small-product-item">
                         <div class="small-product-item-img">
                             <a href="product-details.html"><img src="img/product/8.png" alt="Image"></a>
@@ -2783,9 +2790,9 @@ session_start();
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- small-product-item -->
-                <div class="col-lg-4 col-md-6 col-12">
+                <!-- <div class="col-lg-4 col-md-6 col-12">
                     <div class="ltn__small-product-item">
                         <div class="small-product-item-img">
                             <a href="product-details.html"><img src="img/product/9.png" alt="Image"></a>
@@ -2808,12 +2815,12 @@ session_start();
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!--  -->
-            </div>
+            <!-- </div>
         </div>
     </div>
-    <!-- SMALL PRODUCT LIST AREA END -->
+    SMALL PRODUCT LIST AREA END -->
 
     <!-- VIDEO AREA START -->
     <!-- <div class="ltn__video-popup-area ltn__video-popup-margin">
@@ -2837,7 +2844,7 @@ session_start();
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title-area ltn__section-title-2 text-center">
-                        <h6 class="section-subtitle ltn__secondary-color">Testimonials</h6>
+                        <!-- <h6 class="section-subtitle ltn__secondary-color">Testimonials</h6> -->
                         <h1 class="section-title">Clients Feedbacks<span>.</span></h1>
                     </div>
                 </div>
@@ -2850,8 +2857,8 @@ session_start();
                         </div>
                         <div class="ltn__testimoni-info">
                             <p>Lorem ipsum dolor sit amet, consectetur adipi sicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                            <h4>Rosalina D. William</h4>
-                            <h6>Founder</h6>
+                            <h4>Name</h4>
+                            <!-- <h6>Founder</h6> -->
                         </div>
                         <div class="ltn__testimoni-bg-icon">
                             <i class="far fa-comments"></i>
@@ -2865,8 +2872,8 @@ session_start();
                         </div>
                         <div class="ltn__testimoni-info">
                             <p>Lorem ipsum dolor sit amet, consectetur adipi sicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                            <h4>Rosalina D. William</h4>
-                            <h6>Founder</h6>
+                            <h4>Name</h4>
+                            <!-- <h6>Founder</h6> -->
                         </div>
                         <div class="ltn__testimoni-bg-icon">
                             <i class="far fa-comments"></i>
@@ -2880,8 +2887,8 @@ session_start();
                         </div>
                         <div class="ltn__testimoni-info">
                             <p>Lorem ipsum dolor sit amet, consectetur adipi sicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                            <h4>Rosalina D. William</h4>
-                            <h6>Founder</h6>
+                            <h4>Name</h4>
+                            <!-- <h6>Founder</h6> -->
                         </div>
                         <div class="ltn__testimoni-bg-icon">
                             <i class="far fa-comments"></i>
@@ -2895,8 +2902,8 @@ session_start();
                         </div>
                         <div class="ltn__testimoni-info">
                             <p>Lorem ipsum dolor sit amet, consectetur adipi sicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                            <h4>Rosalina D. William</h4>
-                            <h6>Founder</h6>
+                            <h4>Name</h4>
+                            <!-- <h6>Founder</h6> -->
                         </div>
                         <div class="ltn__testimoni-bg-icon">
                             <i class="far fa-comments"></i>
@@ -2910,8 +2917,8 @@ session_start();
                         </div>
                         <div class="ltn__testimoni-info">
                             <p>Lorem ipsum dolor sit amet, consectetur adipi sicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                            <h4>Rosalina D. William</h4>
-                            <h6>Founder</h6>
+                            <h4>Name</h4>
+                            <!-- <h6>Founder</h6> -->
                         </div>
                         <div class="ltn__testimoni-bg-icon">
                             <i class="far fa-comments"></i>
@@ -2935,7 +2942,7 @@ session_start();
                             <h1>Buy energy vitamins to protect  <br>your body</h1>
                         </div>
                         <div class="btn-wrapper">
-                            <a class="btn btn-effect-3 btn-white" href="shop.html">Explore Products <i class="icon-next"></i></a>
+                            <a class="btn btn-effect-3 btn-white" href="shop-parapharmacy.php">Explore Products <i class="icon-next"></i></a>
                         </div>
                     </div>
                 </div>
@@ -2973,7 +2980,7 @@ session_start();
                                             <i class="icon-call"></i>
                                         </div>
                                         <div class="footer-address-info">
-                                            <p><a href="tel:+0123-456789">+0123-456789</a></p>
+                                            <p><a href="tel:+0123-456789">+212-456789</a></p>
                                         </div>
                                     </li>
                                     <li>
@@ -2981,7 +2988,7 @@ session_start();
                                             <i class="icon-mail"></i>
                                         </div>
                                         <div class="footer-address-info">
-                                            <p><a href="mailto:example@example.com">example@example.com</a></p>
+                                            <p><a href="mailto:example@example.com">moulpharmacy@gmail.com</a></p>
                                         </div>
                                     </li>
                                 </ul>
@@ -3005,7 +3012,7 @@ session_start();
                                     <!-- <li><a href="blog.html">Blog</a></li> -->
                                     <li><a href="shop-parapharmacy.php">All Products</a></li>
                                     <!-- <li><a href="locations.html">Locations Map</a></li> -->
-                                    <li><a href="faq.html">FAQ</a></li>
+                                    <li><a href="faq.php">FAQ</a></li>
                                     <li><a href="contact.php">Contact us</a></li>
                                 </ul>
                             </div>
@@ -3020,7 +3027,7 @@ session_start();
                                     <li><a href="wishlist.html">Wish List</a></li>
                                     <li><a href="login.php">Login</a></li>
                                     <li><a href="about.php">Terms & Conditions</a></li>
-                                    <li><a href="faq.html">FAQ</a></li>
+                                    <li><a href="faq.php">FAQ</a></li>
 
                                     <!-- <li><a href="about.php">Promotional Offers</a></li> -->
                                 </ul>

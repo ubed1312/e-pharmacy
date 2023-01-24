@@ -157,15 +157,15 @@ input[type=number]
                     <li><a href="#">About</a>
                         <ul class="sub-menu">
                             <li><a href="about.php">About</a></li>
-                            <li><a href="service.html">Services</a></li>
+                            <!-- <li><a href="service.html">Services</a></li>
                             <li><a href="service-details.html">Service Details</a></li>
                             <li><a href="portfolio.html">Portfolio</a></li>
                             <li><a href="portfolio-2.html">Portfolio - 02</a></li>
                             <li><a href="portfolio-details.html">Portfolio Details</a></li>
                             <li><a href="team.html">Team</a></li>
-                            <li><a href="team-details.html">Team Details</a></li>
-                            <li><a href="faq.html">FAQ</a></li>
-                            <li><a href="locations.html">Google Map Locations</a></li>
+                            <li><a href="team-details.html">Team Details</a></li> -->
+                            <li><a href="faq.php">FAQ</a></li>
+                            <!-- <li><a href="locations.html">Google Map Locations</a></li> -->
                         </ul>
                     </li>
                     <li><a href="#">Shop</a>
@@ -196,20 +196,20 @@ input[type=number]
                     <li><a href="#">Pages</a>
                         <ul class="sub-menu">
                             <li><a href="about.php">About</a></li>
-                            <li><a href="service.html">Services</a></li>
+                            <!-- <li><a href="service.html">Services</a></li>
                             <li><a href="service-details.html">Service Details</a></li>
                             <li><a href="portfolio.html">Portfolio</a></li>
                             <li><a href="portfolio-2.html">Portfolio - 02</a></li>
                             <li><a href="portfolio-details.html">Portfolio Details</a></li>
                             <li><a href="team.html">Team</a></li>
-                            <li><a href="team-details.html">Team Details</a></li>
-                            <li><a href="faq.html">FAQ</a></li>
-                            <li><a href="history.html">History</a></li>
+                            <li><a href="team-details.html">Team Details</a></li> -->
+                            <li><a href="faq.php">FAQ</a></li>
+                            <!-- <li><a href="history.html">History</a></li>
                             <li><a href="add-listing.html">Add Listing</a></li>
                             <li><a href="locations.html">Google Map Locations</a></li>
-                            <li><a href="404.html">404</a></li>
+                            <li><a href="404.html">404</a></li> -->
                             <li><a href="contact.html">Contact</a></li>
-                            <li><a href="coming-soon.html">Coming Soon</a></li>
+                            <!-- <li><a href="coming-soon.html">Coming Soon</a></li> -->
                         </ul>
                     </li>
                     <li><a href="contact.html">Contact</a></li>
@@ -612,7 +612,7 @@ input[type=number]
                         <h1>Buy energy vitamins to protect  <br>your body</h1>
                         </div>
                         <div class="btn-wrapper">
-                            <a class="btn btn-effect-3 btn-white" href="shop.html">Explore Products <i class="icon-next"></i></a>
+                            <a class="btn btn-effect-3 btn-white" href="shop-parapharmacy.php">Explore Products <i class="icon-next"></i></a>
                         </div>
                     </div>
                 </div>
@@ -649,7 +649,7 @@ input[type=number]
                                             <i class="icon-call"></i>
                                         </div>
                                         <div class="footer-address-info">
-                                            <p><a href="tel:+0123-456789">+0123-456789</a></p>
+                                            <p><a href="tel:+0123-456789">+212-456789</a></p>
                                         </div>
                                     </li>
                                     <li>
@@ -657,7 +657,7 @@ input[type=number]
                                             <i class="icon-mail"></i>
                                         </div>
                                         <div class="footer-address-info">
-                                            <p><a href="mailto:example@example.com">example@example.com</a></p>
+                                            <p><a href="mailto:example@example.com">moulpharmacy@gmail.com</a></p>
                                         </div>
                                     </li>
                                 </ul>
@@ -681,7 +681,7 @@ input[type=number]
                                     <!-- <li><a href="blog.html">Blog</a></li> -->
                                     <li><a href="shop-parapharmacy.php">All Products</a></li>
                                     <!-- <li><a href="locations.html">Locations Map</a></li> -->
-                                    <li><a href="faq.html">FAQ</a></li>
+                                    <li><a href="faq.php">FAQ</a></li>
                                     <li><a href="contact.php">Contact us</a></li>
                                 </ul>
                             </div>
@@ -696,7 +696,7 @@ input[type=number]
                                     <li><a href="wishlist.html">Wish List</a></li>
                                     <li><a href="login.php">Login</a></li>
                                     <li><a href="about.php">Terms & Conditions</a></li>
-                                    <li><a href="faq.html">FAQ</a></li>
+                                    <li><a href="faq.php">FAQ</a></li>
 
                                     <!-- <li><a href="about.php">Promotional Offers</a></li> -->
                                 </ul>

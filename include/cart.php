@@ -25,7 +25,7 @@
         </div>
         <?php
 
-        $select11 = "SELECT * , sum(price*qty) as sumorder from medicines_order , medicines where id_user='$user' and medicines_order.id_m=medicines.id and medicines_order.is_deleted=0 and valid_user='non'";
+        $select11 = "SELECT * , sum(price*qty) as sumorder from medicines_order , medicines where id_user='$user' and medicines_order.id_m=medicines.id and medicines_order.is_deleted=1 and valid_user='non'";
         $rst11 = $con->query($select11);
         $row11 = mysqli_fetch_array($rst11);
         ?>
